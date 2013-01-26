@@ -18,7 +18,6 @@
 		BA4119B216B44BAD00983454 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA4119B116B44BAD00983454 /* Default-568h@2x.png */; };
 		BA4119B516B44BAD00983454 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4119B316B44BAD00983454 /* MainStoryboard_iPhone.storyboard */; };
 		BA4119B816B44BAE00983454 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4119B616B44BAE00983454 /* MainStoryboard_iPad.storyboard */; };
-		BA4119BB16B44BAE00983454 /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4119BA16B44BAE00983454 /* CardGameViewController.m */; };
 		BA4119C316B44BB100983454 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4119C216B44BB100983454 /* SenTestingKit.framework */; };
 		BA4119C416B44BB100983454 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199B16B44BAC00983454 /* UIKit.framework */; };
 		BA4119C516B44BB100983454 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199D16B44BAC00983454 /* Foundation.framework */; };
@@ -52,8 +51,6 @@
 		BA4119B116B44BAD00983454 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BA4119B416B44BAD00983454 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		BA4119B716B44BAE00983454 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		BA4119B916B44BAE00983454 /* CardGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardGameViewController.h; sourceTree = "<group>"; };
-		BA4119BA16B44BAE00983454 /* CardGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardGameViewController.m; sourceTree = "<group>"; };
 		BA4119C116B44BB100983454 /* CardGameTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardGameTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4119C216B44BB100983454 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BA4119CA16B44BB100983454 /* CardGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardGameTests-Info.plist"; sourceTree = "<group>"; };
@@ -119,12 +116,8 @@
 		BA4119A116B44BAC00983454 /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
-				BA4119AA16B44BAC00983454 /* CardGameAppDelegate.h */,
-				BA4119AB16B44BAC00983454 /* CardGameAppDelegate.m */,
 				BA4119B316B44BAD00983454 /* MainStoryboard_iPhone.storyboard */,
 				BA4119B616B44BAE00983454 /* MainStoryboard_iPad.storyboard */,
-				BA4119B916B44BAE00983454 /* CardGameViewController.h */,
-				BA4119BA16B44BAE00983454 /* CardGameViewController.m */,
 				BA4119A216B44BAC00983454 /* Supporting Files */,
 			);
 			path = CardGame;
@@ -133,6 +126,8 @@
 		BA4119A216B44BAC00983454 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BA4119AA16B44BAC00983454 /* CardGameAppDelegate.h */,
+				BA4119AB16B44BAC00983454 /* CardGameAppDelegate.m */,
 				BA4119A316B44BAC00983454 /* CardGame-Info.plist */,
 				BA4119A416B44BAC00983454 /* InfoPlist.strings */,
 				BA4119A716B44BAC00983454 /* main.m */,
@@ -277,7 +272,6 @@
 			files = (
 				BA4119A816B44BAC00983454 /* main.m in Sources */,
 				BA4119AC16B44BAC00983454 /* CardGameAppDelegate.m in Sources */,
-				BA4119BB16B44BAE00983454 /* CardGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +456,7 @@
 				BA4119D516B44BB100983454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA4119D616B44BB100983454 /* Build configuration list for PBXNativeTarget "CardGameTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +465,7 @@
 				BA4119D816B44BB100983454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
