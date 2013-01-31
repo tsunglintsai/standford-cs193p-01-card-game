@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		336AB1F016BA1507007A1A77 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 336AB1EF16BA1507007A1A77 /* CardMatchingGame.m */; };
+		33FEBF4A16BA6B6E001624AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FEBF4916BA6B6E001624AD /* QuartzCore.framework */; };
 		BA41199C16B44BAC00983454 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199B16B44BAC00983454 /* UIKit.framework */; };
 		BA41199E16B44BAC00983454 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199D16B44BAC00983454 /* Foundation.framework */; };
 		BA4119A016B44BAC00983454 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199F16B44BAC00983454 /* CoreGraphics.framework */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		336AB1EE16BA1506007A1A77 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = model/CardMatchingGame.h; sourceTree = "<group>"; };
 		336AB1EF16BA1507007A1A77 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = model/CardMatchingGame.m; sourceTree = "<group>"; };
+		33FEBF4916BA6B6E001624AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BA41199716B44BAC00983454 /* CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA41199B16B44BAC00983454 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BA41199D16B44BAC00983454 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33FEBF4A16BA6B6E001624AD /* QuartzCore.framework in Frameworks */,
 				BA41199C16B44BAC00983454 /* UIKit.framework in Frameworks */,
 				BA41199E16B44BAC00983454 /* Foundation.framework in Frameworks */,
 				BA4119A016B44BAC00983454 /* CoreGraphics.framework in Frameworks */,
@@ -123,6 +126,7 @@
 		BA41199A16B44BAC00983454 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33FEBF4916BA6B6E001624AD /* QuartzCore.framework */,
 				BA41199B16B44BAC00983454 /* UIKit.framework */,
 				BA41199D16B44BAC00983454 /* Foundation.framework */,
 				BA41199F16B44BAC00983454 /* CoreGraphics.framework */,

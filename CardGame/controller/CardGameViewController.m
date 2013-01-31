@@ -10,7 +10,7 @@
 #import "PlayingCard.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
-
+#import "QuartzCore/QuartzCore.h"
 
 @interface CardGameViewController()
 
@@ -61,8 +61,29 @@
 
 - (IBAction)flipCard:(UIButton *)sender {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
+    
+    /*
+    sender.titleLabel.text = @"";
+    [UIView animateWithDuration:0.5f animations:^{
+        sender.layer.transform = CATransform3DMakeRotation(M_PI,0.0,1.0,0.0);
+    } completion:^(BOOL finished){
+        sender.layer.transform = CATransform3DMakeRotation(M_PI,0.0,0.0,0.0);
+        [self updateUI];
+        self.flipCount++;
+    }];
+    */
+    
+    
+    [UIView beginAnimations:@"flipbutton" context:NULL];
+    [UIView setAnimationDuration:0.4];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:sender cache:YES];
+    
+    //[self setBackgroundImage:image forState:UIControlStateNormal];
+    
+    [UIView commitAnimations];
     [self updateUI];
     self.flipCount++;
+    
 }
 
 @end
