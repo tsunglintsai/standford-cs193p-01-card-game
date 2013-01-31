@@ -13,6 +13,21 @@
 
 @implementation PlayingCard
 
+-(int) match:(NSArray*) cardArray{
+    int score = 0;
+    if([cardArray count]==1){
+        PlayingCard *card = [cardArray lastObject];
+        
+        if(self.rank == card.rank){
+            score = 4;
+        }else if([self.suit isEqualToString: card.suit]){
+            score = 1;
+        }
+        
+    }
+    return score;
+}
+
 -(NSString*) contents{
     return [[[PlayingCard rankStrings]objectAtIndex:self.rank] stringByAppendingString:self.suit];
 }
