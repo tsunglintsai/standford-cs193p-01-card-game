@@ -15,11 +15,7 @@
     self = [super init];
     if(self){
         for(NSString *suit in [PlayingCard validSuits]){
-            NSLog(@"add card to deck : %@", suit);
-            
             for(NSInteger rank = 1 ; rank <= [PlayingCard maxRank]; rank++){
-                NSLog(@"add card to deck : %d", rank);
-
                 PlayingCard *card = [[PlayingCard alloc]init];
                 card.rank = rank;
                 card.suit = suit;
