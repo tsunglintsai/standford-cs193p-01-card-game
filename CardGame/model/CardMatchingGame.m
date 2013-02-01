@@ -13,6 +13,7 @@
 @property (readwrite,nonatomic) int score;
 @property (strong,nonatomic) Deck* deck;
 @property (strong,nonatomic) NSMutableArray* cards; // holds list of Card
+@property (nonatomic) int numberOfMatchedCardRequired;
 
 #define MATCH_BOUNUS 4
 #define MISMATCH_PENALTY 2
@@ -29,10 +30,10 @@
     return _cards;
 }
 
--(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck{
+-(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber{
 
     self = [super init];
-    
+    self.numberOfMatchedCardRequired = matchNumber;
     if(self){
         for(int i = 0 ; i < count ; i++){
             Card *card = [deck drawRandomCard];
@@ -65,18 +66,30 @@
             
             int pointsGetThisRound = FLIP_PENALTY;
             
+            NSMutableArray *otherCardsToMatch = [[NSMutableArray alloc]init];
+            
             for(Card *otherCard in self.cards){
                 if(otherCard.isFaceup && !otherCard.isUnplayable){
-                    int matchScore = [card match:@[otherCard]];
-                    if(matchScore){
-                        card.unplayable = YES;
-                        otherCard.unplayable = YES;
-                        pointsGetThisRound = matchScore * MATCH_BOUNUS;
-                    }else{
-                        pointsGetThisRound = 0 - MISMATCH_PENALTY;
+                    [otherCardsToMatch addObject:otherCard];
+
+                    if([otherCardsToMatch count] == self.numberOfMatchedCardRequired -1){ // only try to match when reach number of cards required
+                    
+                        int matchScore = [card match:otherCardsToMatch];
+                        if(matchScore){
+                            card.unplayable = YES;
+                            for(Card *otherCardMatched in otherCardsToMatch){
+                                otherCardMatched.unplayable = YES;
+                            }
+                            pointsGetThisRound = matchScore * MATCH_BOUNUS;
+                        }else{
+                            pointsGetThisRound = 0 - MISMATCH_PENALTY;
+                        }
+                        for(Card *otherCardMatched in otherCardsToMatch){
+                            [self.cardsInlastOperation addObject:otherCardMatched];
+                        }
+                        break;
                     }
-                    [self.cardsInlastOperation addObject:otherCard];
-                    break;
+                    
                 }
             }
             
@@ -93,8 +106,6 @@
     }else{
         return nil;
     }
-    
 }
-
 
 @end

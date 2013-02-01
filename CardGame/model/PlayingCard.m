@@ -15,15 +15,22 @@
 
 -(int) match:(NSArray*) cardArray{
     int score = 0;
-    if([cardArray count]==1){
-        PlayingCard *card = [cardArray lastObject];
+    if([cardArray count]>0){
+        BOOL matchRank = TRUE;        
+        BOOL matchSuit = TRUE;
         
-        if(self.rank == card.rank){
-            score = 4;
-        }else if([self.suit isEqualToString: card.suit]){
-            score = 1;
+        for(PlayingCard *card in cardArray){
+            if(self.rank != card.rank){
+                matchRank = false;
+            }
+            
+            if(![self.suit isEqualToString: card.suit]){
+                matchSuit = false;
+            }
         }
         
+        score += matchSuit ? 1*pow(2,[cardArray count]) : 0;
+        score += matchRank ? 4*pow(2,[cardArray count]) : 0;
     }
     return score;
 }

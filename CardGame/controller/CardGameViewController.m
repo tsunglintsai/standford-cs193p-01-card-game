@@ -20,6 +20,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchNumberSegmentedControll;
 
 @end
 
@@ -28,7 +29,7 @@
 
 -(CardMatchingGame*) game{
     if(!_game){
-        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init]];
+        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init] withMatchCardNumber:self.cardMatchNumberSegmentedControll.selectedSegmentIndex+2];
     }
     return _game;
 }
@@ -129,6 +130,7 @@
     self.flipCount++;
     
 }
+
 - (IBAction)dealButtonClicked:(id)sender {
     self.game = nil;
     self.flipCount = 0;

@@ -18,7 +18,7 @@
 @property (nonatomic) NSMutableArray *cardsInlastOperation;
 @property (nonatomic) int pointsEarnInLastOperation;
 
--(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck;
+-(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber;
 -(void)flipCardAtIndex:(NSUInteger) index;
 -(Card*)cardAtIndex:(NSUInteger) index;
 

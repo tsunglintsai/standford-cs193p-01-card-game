@@ -290,7 +290,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Zk-YE-QJy">
-                                <rect key="frame" x="132" y="414" width="56" height="44"/>
+                                <rect key="frame" x="87" y="411" width="56" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Deal">
@@ -304,10 +304,22 @@
                                     <action selector="dealButtonClicked:" destination="2" eventType="touchUpInside" id="bxK-57-Wqm"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3pg-dj-acY">
+                                <rect key="frame" x="156" y="425" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                </segments>
+                                <connections>
+                                    <action selector="dealButtonClicked:" destination="2" eventType="valueChanged" id="wSc-tZ-fJe"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="cardMatchNumberSegmentedControll" destination="3pg-dj-acY" id="Ntu-RO-Sno"/>
                         <outlet property="flipsLabel" destination="ZBG-f7-iwl" id="SK5-1U-tQL"/>
                         <outlet property="lastFlipResultLabel" destination="bSy-g6-ugd" id="39g-wm-bju"/>
                         <outlet property="scoreLabel" destination="Xss-2y-enz" id="bgu-so-GxB"/>
@@ -338,7 +350,10 @@
         <class className="CardGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="dealButtonClicked:"/>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="action" name="numberOfMatchedCardValueChanged:" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="cardMatchNumberSegmentedControll" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
