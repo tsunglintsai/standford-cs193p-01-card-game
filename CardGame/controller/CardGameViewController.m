@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 
 @end
 
@@ -48,6 +49,9 @@
 }
 
 - (void)updateUI{
+    
+
+    
     for(UIButton *button in self.cardButtons){
         Card *card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
         [button setTitle:card.contents forState:UIControlStateSelected];        
@@ -57,6 +61,48 @@
         button.alpha = card.isUnplayable ? 0.3 : 1;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
+    
+    
+
+    
+    NSString *lastFlipResult = @"";
+    if(self.game.lastState == JUST_FLIP_A_CARD){
+        
+        Card *flippedCard = [self.game.cardsInlastOperation lastObject];
+        lastFlipResult = [@"Flipped up " stringByAppendingString:flippedCard.contents];
+
+    }else if(self.game.lastState == MACTCHED_CARDS){
+
+        lastFlipResult = @"Matched ";
+        for(Card *matchedCard in self.game.cardsInlastOperation){
+            lastFlipResult = [lastFlipResult stringByAppendingString:matchedCard.contents];
+            if(![[self.game.cardsInlastOperation lastObject] isEqual:matchedCard]){
+                lastFlipResult = [lastFlipResult stringByAppendingString:@" & "];
+            }
+        }
+        lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" for %d points", self.game.pointsEarnInLastOperation]];
+        
+
+    }else if(self.game.lastState == MISMATCHED_CARDS){
+
+        for(Card *matchedCard in self.game.cardsInlastOperation){
+            lastFlipResult = [lastFlipResult stringByAppendingString:matchedCard.contents];
+            if(![[self.game.cardsInlastOperation lastObject] isEqual:matchedCard]){
+                lastFlipResult = [lastFlipResult stringByAppendingString:@" & "];
+            }
+        }
+        lastFlipResult = [lastFlipResult stringByAppendingString:@" don't mach!"];
+        lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" %d points penalty!", self.game.pointsEarnInLastOperation]];
+
+        
+    }
+    
+    self.lastFlipResultLabel.text = lastFlipResult;
+
+
+
+
+
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
