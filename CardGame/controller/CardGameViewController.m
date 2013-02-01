@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchNumberSegmentedControll;
 @property (strong, nonatomic) UIImage *cardBackImage;
-@property (weak, nonatomic) IBOutlet UIImageView *testImageView;
 
 @end
 
