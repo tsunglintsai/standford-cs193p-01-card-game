@@ -21,11 +21,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchNumberSegmentedControll;
+@property (strong, nonatomic) UIImage *cardBackImage;
+@property (weak, nonatomic) IBOutlet UIImageView *testImageView;
 
 @end
 
 @implementation CardGameViewController
 @synthesize cardButtons = _cardButtons;
+
+-(UIImage*) cardBackImage{
+    if(!_cardBackImage){
+        _cardBackImage = [UIImage imageNamed:@"steve-jobs.png"];
+    }
+    return _cardBackImage;
+}
 
 -(CardMatchingGame*) game{
     if(!_game){
@@ -90,17 +99,23 @@
     
     for(UIButton *button in self.cardButtons){
         Card *card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
-        [button setTitle:card.contents forState:UIControlStateSelected];        
+        [button setTitle:card.contents forState:UIControlStateSelected];
         [button setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
+        [button setTitle:card.contents forState:UIControlStateNormal ];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5)];
+        [button setImage:card.isFaceup? nil : self.cardBackImage forState:UIControlStateNormal];
         button.selected = card.isFaceup;
         button.enabled = !card.isUnplayable;
         button.alpha = card.isUnplayable ? 0.3 : 1;
+
+
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
     
     self.lastFlipResultLabel.text = [CardGameViewController getFlipResultString:self.game];
 
     self.cardMatchNumberSegmentedControll.enabled = self.game.score ? NO : YES;
+    
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
@@ -121,10 +136,9 @@
     [UIView beginAnimations:@"flipbutton" context:NULL];
     [UIView setAnimationDuration:0.4];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:sender cache:YES];
-    
     //[self setBackgroundImage:image forState:UIControlStateNormal];
-    
     [UIView commitAnimations];
+    
     [self updateUI];
     self.flipCount++;
     
