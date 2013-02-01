@@ -104,10 +104,17 @@
         [button setTitle:card.contents forState:UIControlStateNormal ];
         [button setImageEdgeInsets:UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5)];
         [button setImage:card.isFaceup? nil : self.cardBackImage forState:UIControlStateNormal];
+
+        if(button.selected != card.isFaceup){
+            [UIView beginAnimations:@"flipbutton" context:NULL];
+            [UIView setAnimationDuration:0.4];
+            [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:button cache:YES];
+            [UIView commitAnimations];
+        }
+        
         button.selected = card.isFaceup;
         button.enabled = !card.isUnplayable;
         button.alpha = card.isUnplayable ? 0.3 : 1;
-
 
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
@@ -120,25 +127,6 @@
 
 - (IBAction)flipCard:(UIButton *)sender {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
-    
-    /*
-    sender.titleLabel.text = @"";
-    [UIView animateWithDuration:0.5f animations:^{
-        sender.layer.transform = CATransform3DMakeRotation(M_PI,0.0,1.0,0.0);
-    } completion:^(BOOL finished){
-        sender.layer.transform = CATransform3DMakeRotation(M_PI,0.0,0.0,0.0);
-        [self updateUI];
-        self.flipCount++;
-    }];
-    */
-    
-    
-    [UIView beginAnimations:@"flipbutton" context:NULL];
-    [UIView setAnimationDuration:0.4];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:sender cache:YES];
-    //[self setBackgroundImage:image forState:UIControlStateNormal];
-    [UIView commitAnimations];
-    
     [self updateUI];
     self.flipCount++;
     

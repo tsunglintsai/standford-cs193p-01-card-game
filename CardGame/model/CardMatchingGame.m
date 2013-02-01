@@ -82,6 +82,9 @@
                             }
                             pointsGetThisRound = matchScore * MATCH_BOUNUS;
                         }else{
+                            for(Card *otherCardMatched in otherCardsToMatch){
+                                otherCardMatched.faceup = NO;
+                            }
                             pointsGetThisRound = 0 - MISMATCH_PENALTY;
                         }
                         for(Card *otherCardMatched in otherCardsToMatch){

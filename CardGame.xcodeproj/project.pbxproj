@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		33588B1A16BB709300E85276 /* steve-jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 33588B1916BB709300E85276 /* steve-jobs.png */; };
-		33588B1C16BB71C400E85276 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 33588B1B16BB71C400E85276 /* blank.png */; };
 		336AB1F016BA1507007A1A77 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 336AB1EF16BA1507007A1A77 /* CardMatchingGame.m */; };
 		33FEBF4A16BA6B6E001624AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FEBF4916BA6B6E001624AD /* QuartzCore.framework */; };
 		BA41199C16B44BAC00983454 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199B16B44BAC00983454 /* UIKit.framework */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		33588B1916BB709300E85276 /* steve-jobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steve-jobs.png"; sourceTree = "<group>"; };
-		33588B1B16BB71C400E85276 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
 		336AB1EE16BA1506007A1A77 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = model/CardMatchingGame.h; sourceTree = "<group>"; };
 		336AB1EF16BA1507007A1A77 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = model/CardMatchingGame.m; sourceTree = "<group>"; };
 		33FEBF4916BA6B6E001624AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -111,7 +109,6 @@
 		33588B1716BB6FDF00E85276 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				33588B1B16BB71C400E85276 /* blank.png */,
 				33588B1916BB709300E85276 /* steve-jobs.png */,
 			);
 			name = images;
@@ -301,7 +298,6 @@
 				BA4119B516B44BAD00983454 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BA4119B816B44BAE00983454 /* MainStoryboard_iPad.storyboard in Resources */,
 				33588B1A16BB709300E85276 /* steve-jobs.png in Resources */,
-				33588B1C16BB71C400E85276 /* blank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
