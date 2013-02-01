@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *replaySlider;
 @property (weak, nonatomic) IBOutlet UIButton *replayButton;
 
+#define Disable_Alpha 0.6
+
 @end
 
 @implementation CardGameViewController
@@ -34,7 +36,7 @@
 
 -(NSTimer*) timer{
     if(!_timer){
-        double timerInterval = 0.7;
+        double timerInterval = 0.5;
         _timer = [NSTimer scheduledTimerWithTimeInterval: timerInterval target:self selector:@selector(replay:) userInfo:nil repeats: YES];
         }
     return _timer;
@@ -53,6 +55,7 @@
         self.timer = nil;
         self.replayButton.enabled = YES;
         self.replayButton.alpha = 1.0;
+        [self updateUI];
     }
     self.replaySlider.value += 1;    
 }
@@ -73,7 +76,7 @@
 
 -(UIImage*) cardBackImage{
     if(!_cardBackImage){
-        _cardBackImage = [UIImage imageNamed:@"steve-jobs.png"];
+        _cardBackImage = [UIImage imageNamed:@"facebook-like-icon.png"];
     }
     return _cardBackImage;
 }
@@ -139,7 +142,7 @@
         [button setTitle:card.contents forState:UIControlStateSelected];
         [button setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
         [button setTitle:card.contents forState:UIControlStateNormal ];
-        [button setImageEdgeInsets:UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5)];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(3, 3, 3, 3)];
         [button setImage:card.isFaceup? nil : self.cardBackImage forState:UIControlStateNormal];
 
         if(button.selected != card.isFaceup){
@@ -151,7 +154,7 @@
         
         button.selected = card.isFaceup;
         button.enabled = !card.isUnplayable;
-        button.alpha = card.isUnplayable ? 0.3 : 1;
+        button.alpha = card.isUnplayable ? Disable_Alpha : 1;
         
         if(floor(self.replaySlider.value)==floor(self.replaySlider.maximumValue)){
             button.userInteractionEnabled = YES;
@@ -167,12 +170,14 @@
     if(floor(self.replaySlider.value)==floor(self.replaySlider.maximumValue)){
         self.lastFlipResultLabel.alpha = 1.0;
     }else{
-        self.lastFlipResultLabel.alpha = 0.5;
+        self.lastFlipResultLabel.alpha = Disable_Alpha;
     }
     
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
+    self.replayButton.enabled = YES;
+    self.replayButton.alpha = 1.0;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     [self updateUI];
     self.flipCount++;
@@ -184,6 +189,10 @@
 }
 
 - (IBAction)dealButtonClicked:(id)sender {
+    self.replayButton.enabled = NO;
+    self.replayButton.alpha = Disable_Alpha;
+    [self.timer invalidate];
+    self.timer = nil;
     self.game = nil;
     self.flipHistory=nil;
     self.cardMatchNumberSegmentedControll.enabled = YES;
@@ -191,10 +200,11 @@
 }
 
 - (IBAction)replaySliderValueChange:(UISlider *)sender {
-    [self.timer invalidate];
-    self.timer = nil;
     self.replayButton.enabled = YES;
     self.replayButton.alpha = 1.0;
+    
+    [self.timer invalidate];
+    self.timer = nil;
     [self.game resetGame];
     self.flipCount = 0;
     for(int i =0; i < floor(sender.value); i++){
@@ -207,7 +217,7 @@
 
 - (IBAction)replayButtonClicked:(UIButton *)sender {
     self.replayButton.enabled = NO;
-    self.replayButton.alpha = 0.5;
+    self.replayButton.alpha = Disable_Alpha;
     
     [self.timer invalidate];
     self.timer = nil;
