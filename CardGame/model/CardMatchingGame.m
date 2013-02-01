@@ -14,13 +14,12 @@
 @property (strong,nonatomic) Deck* deck;
 @property (strong,nonatomic) NSMutableArray* cards; // holds list of Card
 
-#define MATCH_BOUNUS 4;
-#define MISMATCH_PENALTY 2;
+#define MATCH_BOUNUS 4
+#define MISMATCH_PENALTY 2
 
 @end
 
 @implementation CardMatchingGame
-
 
 
 -(NSMutableArray*)cards{
@@ -61,11 +60,10 @@
 
     if(card && !card.unplayable){
         if(!card.isFaceup){
-            self.lastState = JUST_FLIP_A_CARD;
             [self.cardsInlastOperation removeAllObjects];
             [self.cardsInlastOperation addObject:card];
             
-            int pointsGetThisRound = -1;
+            int pointsGetThisRound = FLIP_PENALTY;
             
             for(Card *otherCard in self.cards){
                 if(otherCard.isFaceup && !otherCard.isUnplayable){
@@ -74,10 +72,8 @@
                         card.unplayable = YES;
                         otherCard.unplayable = YES;
                         pointsGetThisRound = matchScore * MATCH_BOUNUS;
-                        self.lastState = MACTCHED_CARDS;
                     }else{
                         pointsGetThisRound = 0 - MISMATCH_PENALTY;
-                        self.lastState = MISMATCHED_CARDS;
                     }
                     [self.cardsInlastOperation addObject:otherCard];
                     break;

@@ -66,12 +66,12 @@
 
     
     NSString *lastFlipResult = @"";
-    if(self.game.lastState == JUST_FLIP_A_CARD){
+    if(self.game.pointsEarnInLastOperation == FLIP_PENALTY ){
         
         Card *flippedCard = [self.game.cardsInlastOperation lastObject];
         lastFlipResult = [@"Flipped up " stringByAppendingString:flippedCard.contents];
 
-    }else if(self.game.lastState == MACTCHED_CARDS){
+    }else if(self.game.pointsEarnInLastOperation > 0){
 
         lastFlipResult = @"Matched ";
         for(Card *matchedCard in self.game.cardsInlastOperation){
@@ -83,7 +83,7 @@
         lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" for %d points", self.game.pointsEarnInLastOperation]];
         
 
-    }else if(self.game.lastState == MISMATCHED_CARDS){
+    }else if(self.game.pointsEarnInLastOperation < 0){
 
         for(Card *matchedCard in self.game.cardsInlastOperation){
             lastFlipResult = [lastFlipResult stringByAppendingString:matchedCard.contents];
