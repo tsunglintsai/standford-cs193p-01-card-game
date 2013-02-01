@@ -88,8 +88,6 @@
 
 - (void)updateUI{
     
-
-    
     for(UIButton *button in self.cardButtons){
         Card *card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
         [button setTitle:card.contents forState:UIControlStateSelected];        
@@ -102,6 +100,7 @@
     
     self.lastFlipResultLabel.text = [CardGameViewController getFlipResultString:self.game];
 
+    self.cardMatchNumberSegmentedControll.enabled = self.game.score ? NO : YES;
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
