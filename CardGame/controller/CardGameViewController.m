@@ -92,7 +92,7 @@
             }
         }
         lastFlipResult = [lastFlipResult stringByAppendingString:@" don't mach!"];
-        lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" %d points penalty!", self.game.pointsEarnInLastOperation]];
+        lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" %d points penalty!", abs(self.game.pointsEarnInLastOperation)]];
 
         
     }
