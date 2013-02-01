@@ -22,11 +22,54 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchNumberSegmentedControll;
 @property (strong, nonatomic) UIImage *cardBackImage;
+@property (strong, nonatomic) NSMutableArray *flipHistory;
+@property (strong, nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UISlider *replaySlider;
+@property (weak, nonatomic) IBOutlet UIButton *replayButton;
 
 @end
 
 @implementation CardGameViewController
-@synthesize cardButtons = _cardButtons;
+@synthesize flipHistory = _flipHistory;
+
+-(NSTimer*) timer{
+    if(!_timer){
+        double timerInterval = 0.7;
+        _timer = [NSTimer scheduledTimerWithTimeInterval: timerInterval target:self selector:@selector(replay:) userInfo:nil repeats: YES];
+        }
+    return _timer;
+}
+
+-(void) replay:(NSTimer*) theTimer {
+    
+    int currentReplayIndex = floor(self.replaySlider.value);
+    if(currentReplayIndex < [self.flipHistory count]){
+        int indexOfCardFliped = [[self.flipHistory objectAtIndex:currentReplayIndex]integerValue];
+        [self.game flipCardAtIndex:indexOfCardFliped];
+        [self updateUI];
+        self.flipCount++;
+    }else{
+        [self.timer invalidate];
+        self.timer = nil;
+        self.replayButton.enabled = YES;
+        self.replayButton.alpha = 1.0;
+    }
+    self.replaySlider.value += 1;    
+}
+
+-(NSMutableArray*)flipHistory{
+    if(!_flipHistory){
+        _flipHistory = [[NSMutableArray alloc]init];
+    }
+    return _flipHistory;
+}
+-(void)setFlipHistory:(NSMutableArray *)flipHistory{
+    _flipHistory = flipHistory;
+    self.replaySlider.value = [self.flipHistory count];
+    self.replaySlider.maximumValue = [self.flipHistory count];
+    self.flipCount = [self.flipHistory count];
+}
+
 
 -(UIImage*) cardBackImage{
     if(!_cardBackImage){
@@ -46,11 +89,6 @@
     _cardButtons = cardButtons;
     [self updateUI];    
 }
-
--(NSArray*) cardButtons{
-    return _cardButtons;
-}
-
 
 - (void)setFlipCount:(int)flipCount{
     _flipCount = flipCount;
@@ -114,13 +152,23 @@
         button.selected = card.isFaceup;
         button.enabled = !card.isUnplayable;
         button.alpha = card.isUnplayable ? 0.3 : 1;
+        
+        if(floor(self.replaySlider.value)==floor(self.replaySlider.maximumValue)){
+            button.userInteractionEnabled = YES;
+        }else{
+            button.userInteractionEnabled = NO;
+        }
 
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
     
     self.lastFlipResultLabel.text = [CardGameViewController getFlipResultString:self.game];
-
-    self.cardMatchNumberSegmentedControll.enabled = self.game.score ? NO : YES;
+    
+    if(floor(self.replaySlider.value)==floor(self.replaySlider.maximumValue)){
+        self.lastFlipResultLabel.alpha = 1.0;
+    }else{
+        self.lastFlipResultLabel.alpha = 0.5;
+    }
     
 }
 
@@ -128,13 +176,45 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     [self updateUI];
     self.flipCount++;
-    
+    [self.flipHistory addObject:[NSNumber numberWithInteger:[self.cardButtons indexOfObject:sender]]];
+    self.replaySlider.maximumValue = [self.flipHistory count];
+    self.replaySlider.value = [self.flipHistory count];
+    self.cardMatchNumberSegmentedControll.enabled = NO;
+
 }
 
 - (IBAction)dealButtonClicked:(id)sender {
     self.game = nil;
-    self.flipCount = 0;
+    self.flipHistory=nil;
+    self.cardMatchNumberSegmentedControll.enabled = YES;
     [self updateUI];
 }
 
+- (IBAction)replaySliderValueChange:(UISlider *)sender {
+    [self.timer invalidate];
+    self.timer = nil;
+    self.replayButton.enabled = YES;
+    self.replayButton.alpha = 1.0;
+    [self.game resetGame];
+    self.flipCount = 0;
+    for(int i =0; i < floor(sender.value); i++){
+        int indexOfCardFliped = [[self.flipHistory objectAtIndex:i]integerValue];
+        [self.game flipCardAtIndex:indexOfCardFliped];
+        self.flipCount ++;
+    }
+    [self updateUI];
+}
+
+- (IBAction)replayButtonClicked:(UIButton *)sender {
+    self.replayButton.enabled = NO;
+    self.replayButton.alpha = 0.5;
+    
+    [self.timer invalidate];
+    self.timer = nil;
+    [self.game resetGame];
+    [self updateUI];
+    self.flipCount = 0;
+    self.replaySlider.value = 0;
+    [self.timer fire];
+}
 @end

@@ -111,4 +111,15 @@
     }
 }
 
+-(void)resetGame{
+    self.score = 0;
+    self.cardsInlastOperation = 0;
+    self.pointsEarnInLastOperation = 0;
+    for(Card *card in self.cards){
+        card.faceup = false;
+        card.unplayable = false;
+    }
+}
+
+
 @end

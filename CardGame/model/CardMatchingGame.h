@@ -21,5 +21,5 @@
 -(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber;
 -(void)flipCardAtIndex:(NSUInteger) index;
 -(Card*)cardAtIndex:(NSUInteger) index;
-
+-(void)resetGame;
 @end
