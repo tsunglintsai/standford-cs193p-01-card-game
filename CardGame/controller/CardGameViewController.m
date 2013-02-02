@@ -76,7 +76,7 @@
 
 -(UIImage*) cardBackImage{
     if(!_cardBackImage){
-        _cardBackImage = [UIImage imageNamed:@"facebook-like-icon.png"];
+        _cardBackImage = [UIImage imageNamed:@"CardBack.png"];
     }
     return _cardBackImage;
 }
@@ -142,7 +142,7 @@
         [button setTitle:card.contents forState:UIControlStateSelected];
         [button setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
         [button setTitle:card.contents forState:UIControlStateNormal ];
-        [button setImageEdgeInsets:UIEdgeInsetsMake(3, 3, 3, 3)];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
         [button setImage:card.isFaceup? nil : self.cardBackImage forState:UIControlStateNormal];
 
         if(button.selected != card.isFaceup){
@@ -155,6 +155,8 @@
         button.selected = card.isFaceup;
         button.enabled = !card.isUnplayable;
         button.alpha = card.isUnplayable ? Disable_Alpha : 1;
+        button.adjustsImageWhenHighlighted = NO;
+        button.adjustsImageWhenDisabled = NO;
         
         if(floor(self.replaySlider.value)==floor(self.replaySlider.maximumValue)){
             button.userInteractionEnabled = YES;

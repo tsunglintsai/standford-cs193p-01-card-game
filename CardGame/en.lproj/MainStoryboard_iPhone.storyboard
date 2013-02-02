@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="P5f-7z-Ssu">
-                                <rect key="frame" x="0.0" y="0.0" width="328" height="467"/>
+                                <rect key="frame" x="0.0" y="0.0" width="328" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59868592685022892" green="0.73152668732855675" blue="0.91528111645299148" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -22,8 +22,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b6M-uB-rvw">
-                                <rect key="frame" x="16" y="57" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="b6M-uB-rvw">
+                                <rect key="frame" x="16" y="57" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -44,8 +44,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="4Cx-TY-wlz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9eA-vB-dYP">
-                                <rect key="frame" x="90" y="57" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="9eA-vB-dYP">
+                                <rect key="frame" x="90" y="57" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -66,8 +66,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uv7-Cz-JeS">
-                                <rect key="frame" x="166" y="57" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="uv7-Cz-JeS">
+                                <rect key="frame" x="166" y="57" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -82,8 +82,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="ZZv-RS-T8H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMT-rW-YAN">
-                                <rect key="frame" x="243" y="57" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="UMT-rW-YAN">
+                                <rect key="frame" x="243" y="57" width="66" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,8 +99,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="dXb-ny-ihU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LPj-QP-vlV">
-                                <rect key="frame" x="16" y="131" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="LPj-QP-vlV">
+                                <rect key="frame" x="16" y="131" width="66" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,8 +116,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="H2O-Cu-KWh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dwe-8b-wnY">
-                                <rect key="frame" x="90" y="131" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="dwe-8b-wnY">
+                                <rect key="frame" x="90" y="131" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -132,8 +132,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="Uf5-UY-Sor"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pDD-R9-da2">
-                                <rect key="frame" x="166" y="131" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="pDD-R9-da2">
+                                <rect key="frame" x="166" y="131" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -148,8 +148,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="gAx-Ej-YRM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HZS-Jd-fx8">
-                                <rect key="frame" x="243" y="131" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="HZS-Jd-fx8">
+                                <rect key="frame" x="243" y="131" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -164,8 +164,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="T6c-d0-nC2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vhJ-6S-XEB">
-                                <rect key="frame" x="16" y="205" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="vhJ-6S-XEB">
+                                <rect key="frame" x="16" y="205" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -180,8 +180,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="wed-rd-RJu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gSa-zg-05D">
-                                <rect key="frame" x="90" y="205" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="gSa-zg-05D">
+                                <rect key="frame" x="90" y="205" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -196,8 +196,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="Rwm-1S-EiS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r5p-fE-wSB">
-                                <rect key="frame" x="166" y="205" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="r5p-fE-wSB">
+                                <rect key="frame" x="166" y="205" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -212,8 +212,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="xmP-Hw-P74"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jyk-hx-FiN">
-                                <rect key="frame" x="243" y="205" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="jyk-hx-FiN">
+                                <rect key="frame" x="243" y="205" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -235,8 +235,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hH7-h5-ReW">
-                                <rect key="frame" x="16" y="278" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="hH7-h5-ReW">
+                                <rect key="frame" x="16" y="278" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -251,8 +251,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="ZXL-VT-UdH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ToG-LB-C5E">
-                                <rect key="frame" x="90" y="278" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ToG-LB-C5E">
+                                <rect key="frame" x="90" y="278" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -267,8 +267,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="krb-2K-J2l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nnz-M7-iYS">
-                                <rect key="frame" x="166" y="278" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Nnz-M7-iYS">
+                                <rect key="frame" x="166" y="278" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -283,8 +283,8 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="MJX-uJ-KBN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a95-nV-A2o">
-                                <rect key="frame" x="243" y="278" width="62" height="66"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="a95-nV-A2o">
+                                <rect key="frame" x="243" y="278" width="66" height="66"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="">
@@ -306,8 +306,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Zk-YE-QJy">
-                                <rect key="frame" x="16" y="399" width="66" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="397" width="66" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -317,23 +317,23 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dealButtonClicked:" destination="2" eventType="touchUpInside" id="bxK-57-Wqm"/>
+                                    <action selector="dealButtonClicked:" destination="2" eventType="touchUpInside" id="52e-4b-Umh"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3pg-dj-acY">
                                 <rect key="frame" x="157" y="409" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <segments>
                                     <segment title="2"/>
                                     <segment title="3"/>
                                 </segments>
                                 <connections>
-                                    <action selector="dealButtonClicked:" destination="2" eventType="valueChanged" id="wSc-tZ-fJe"/>
+                                    <action selector="dealButtonClicked:" destination="2" eventType="valueChanged" id="Q10-B7-eLg"/>
                                 </connections>
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" id="4tQ-Ui-LMD">
                                 <rect key="frame" x="94" y="360" width="213" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="replaySliderValueChange:" destination="2" eventType="valueChanged" id="qFx-RY-4kK"/>
@@ -341,7 +341,7 @@
                             </slider>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="92J-Tv-PKW">
                                 <rect key="frame" x="16" y="351" width="66" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Replay">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -356,7 +356,7 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Match Card Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2r-fK-UWv">
                                 <rect key="frame" x="142" y="384" width="116" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -368,7 +368,7 @@
                         <outlet property="cardMatchNumberSegmentedControll" destination="3pg-dj-acY" id="Ntu-RO-Sno"/>
                         <outlet property="flipsLabel" destination="ZBG-f7-iwl" id="SK5-1U-tQL"/>
                         <outlet property="lastFlipResultLabel" destination="bSy-g6-ugd" id="39g-wm-bju"/>
-                        <outlet property="replayButton" destination="92J-Tv-PKW" id="dHF-UZ-oO7"/>
+                        <outlet property="replayButton" destination="92J-Tv-PKW" id="gGg-oL-LQj"/>
                         <outlet property="replaySlider" destination="4tQ-Ui-LMD" id="RyV-Yz-SBe"/>
                         <outlet property="scoreLabel" destination="Xss-2y-enz" id="bgu-so-GxB"/>
                         <outletCollection property="cardButtons" destination="b6M-uB-rvw" id="agG-SA-9un"/>
@@ -394,24 +394,6 @@
             <point key="canvasLocation" x="129" y="83"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CardGameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dealButtonClicked:"/>
-                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
-                <relationship kind="action" name="replayButtonClicked:" candidateClass="UIButton"/>
-                <relationship kind="action" name="replaySliderValueChange:" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="cardMatchNumberSegmentedControll" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="replayButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="replaySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

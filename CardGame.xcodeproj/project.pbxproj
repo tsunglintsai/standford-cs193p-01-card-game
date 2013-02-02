@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33588B1A16BB709300E85276 /* steve-jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 33588B1916BB709300E85276 /* steve-jobs.png */; };
 		336AB1F016BA1507007A1A77 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 336AB1EF16BA1507007A1A77 /* CardMatchingGame.m */; };
 		33FEBF4A16BA6B6E001624AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FEBF4916BA6B6E001624AD /* QuartzCore.framework */; };
 		BA41199C16B44BAC00983454 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41199B16B44BAC00983454 /* UIKit.framework */; };
@@ -31,10 +30,21 @@
 		BA8A6CA316B456CA008126C0 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A6CA216B456CA008126C0 /* PlayingCard.m */; };
 		BA8A6CA616B46127008126C0 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A6CA516B46127008126C0 /* PlayingCardDeck.m */; };
 		BA8A6CAA16B46811008126C0 /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A6CA916B46811008126C0 /* CardGameViewController.m */; };
-		BAE220F516BBA84000B39A03 /* Table BackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE220F316BBA84000B39A03 /* Table BackGround.png */; };
-		BAE220F616BBA84000B39A03 /* Table BackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE220F416BBA84000B39A03 /* Table BackGround@2x.png */; };
-		BAE220F816BBA97600B39A03 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE220F716BBA97600B39A03 /* background.png */; };
-		BAE220FA16BBAFA400B39A03 /* facebook-like-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE220F916BBAFA400B39A03 /* facebook-like-icon.png */; };
+		BAA5EF3516BCBD2B00BF8D10 /* table background.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA5EF3316BCBD2B00BF8D10 /* table background.png */; };
+		BAA5EF3616BCBD2B00BF8D10 /* table background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA5EF3416BCBD2B00BF8D10 /* table background@2x.png */; };
+		BAAFDAFE16BCC8DB00C5A39A /* CardBack@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDAFA16BCC8DB00C5A39A /* CardBack@2x~ipad.png */; };
+		BAAFDAFF16BCC8DB00C5A39A /* CardBack~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDAFB16BCC8DB00C5A39A /* CardBack~ipad.png */; };
+		BAAFDB0E16BCCEAB00C5A39A /* CardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB0C16BCCEAB00C5A39A /* CardBack.png */; };
+		BAAFDB0F16BCCEAB00C5A39A /* CardBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB0D16BCCEAB00C5A39A /* CardBack@2x.png */; };
+		BAAFDB1116BCCEF500C5A39A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB1016BCCEF500C5A39A /* Default-568h@2x.png */; };
+		BAAFDB1416BCD45000C5A39A /* Deal Deck.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB1216BCD45000C5A39A /* Deal Deck.png */; };
+		BAAFDB1516BCD45000C5A39A /* Deal Deck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB1316BCD45000C5A39A /* Deal Deck@2x.png */; };
+		BAAFDB1B16BCDAAC00C5A39A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB1A16BCDAAC00C5A39A /* Default.png */; };
+		BAAFDB1E16BCDAB300C5A39A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB1D16BCDAB300C5A39A /* Default@2x.png */; };
+		BAAFDB2016BCDACC00C5A39A /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB1F16BCDACC00C5A39A /* Default-Portrait~ipad.png */; };
+		BAAFDB2216BCDB7100C5A39A /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB2116BCDB7100C5A39A /* Default-Portrait@2x~ipad.png */; };
+		BAAFDB2416BCDB7600C5A39A /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB2316BCDB7600C5A39A /* Default-Landscape~ipad.png */; };
+		BAAFDB2616BCDB7800C5A39A /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFDB2516BCDB7800C5A39A /* Default-Landscape@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		33588B1916BB709300E85276 /* steve-jobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steve-jobs.png"; sourceTree = "<group>"; };
 		336AB1EE16BA1506007A1A77 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = model/CardMatchingGame.h; sourceTree = "<group>"; };
 		336AB1EF16BA1507007A1A77 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = model/CardMatchingGame.m; sourceTree = "<group>"; };
 		33FEBF4916BA6B6E001624AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -83,10 +92,21 @@
 		BA8A6CA516B46127008126C0 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		BA8A6CA816B46811008126C0 /* CardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardGameViewController.h; path = controller/CardGameViewController.h; sourceTree = "<group>"; };
 		BA8A6CA916B46811008126C0 /* CardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardGameViewController.m; path = controller/CardGameViewController.m; sourceTree = "<group>"; };
-		BAE220F316BBA84000B39A03 /* Table BackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Table BackGround.png"; sourceTree = "<group>"; };
-		BAE220F416BBA84000B39A03 /* Table BackGround@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Table BackGround@2x.png"; sourceTree = "<group>"; };
-		BAE220F716BBA97600B39A03 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		BAE220F916BBAFA400B39A03 /* facebook-like-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-like-icon.png"; sourceTree = "<group>"; };
+		BAA5EF3316BCBD2B00BF8D10 /* table background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table background.png"; sourceTree = "<group>"; };
+		BAA5EF3416BCBD2B00BF8D10 /* table background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table background@2x.png"; sourceTree = "<group>"; };
+		BAAFDAFA16BCC8DB00C5A39A /* CardBack@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CardBack@2x~ipad.png"; sourceTree = "<group>"; };
+		BAAFDAFB16BCC8DB00C5A39A /* CardBack~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CardBack~ipad.png"; sourceTree = "<group>"; };
+		BAAFDB0C16BCCEAB00C5A39A /* CardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBack.png; sourceTree = "<group>"; };
+		BAAFDB0D16BCCEAB00C5A39A /* CardBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CardBack@2x.png"; sourceTree = "<group>"; };
+		BAAFDB1016BCCEF500C5A39A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BAAFDB1216BCD45000C5A39A /* Deal Deck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deal Deck.png"; sourceTree = "<group>"; };
+		BAAFDB1316BCD45000C5A39A /* Deal Deck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deal Deck@2x.png"; sourceTree = "<group>"; };
+		BAAFDB1A16BCDAAC00C5A39A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BAAFDB1D16BCDAB300C5A39A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BAAFDB1F16BCDACC00C5A39A /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		BAAFDB2116BCDB7100C5A39A /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		BAAFDB2316BCDB7600C5A39A /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		BAAFDB2516BCDB7800C5A39A /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +137,14 @@
 		33588B1716BB6FDF00E85276 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				BAE220F716BBA97600B39A03 /* background.png */,
-				BAE220F916BBAFA400B39A03 /* facebook-like-icon.png */,
-				BAE220F316BBA84000B39A03 /* Table BackGround.png */,
-				BAE220F416BBA84000B39A03 /* Table BackGround@2x.png */,
-				33588B1916BB709300E85276 /* steve-jobs.png */,
+				BAAFDB1216BCD45000C5A39A /* Deal Deck.png */,
+				BAAFDB1316BCD45000C5A39A /* Deal Deck@2x.png */,
+				BAAFDB0C16BCCEAB00C5A39A /* CardBack.png */,
+				BAAFDB0D16BCCEAB00C5A39A /* CardBack@2x.png */,
+				BAAFDAFA16BCC8DB00C5A39A /* CardBack@2x~ipad.png */,
+				BAAFDAFB16BCC8DB00C5A39A /* CardBack~ipad.png */,
+				BAA5EF3316BCBD2B00BF8D10 /* table background.png */,
+				BAA5EF3416BCBD2B00BF8D10 /* table background@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -129,6 +152,13 @@
 		BA41198C16B44BAB00983454 = {
 			isa = PBXGroup;
 			children = (
+				BAAFDB2516BCDB7800C5A39A /* Default-Landscape@2x~ipad.png */,
+				BAAFDB2316BCDB7600C5A39A /* Default-Landscape~ipad.png */,
+				BAAFDB2116BCDB7100C5A39A /* Default-Portrait@2x~ipad.png */,
+				BAAFDB1F16BCDACC00C5A39A /* Default-Portrait~ipad.png */,
+				BAAFDB1D16BCDAB300C5A39A /* Default@2x.png */,
+				BAAFDB1A16BCDAAC00C5A39A /* Default.png */,
+				BAAFDB1016BCCEF500C5A39A /* Default-568h@2x.png */,
 				BA4119A116B44BAC00983454 /* CardGame */,
 				BA4119C816B44BB100983454 /* CardGameTests */,
 				BA41199A16B44BAC00983454 /* Frameworks */,
@@ -309,11 +339,21 @@
 				BA4119B216B44BAD00983454 /* Default-568h@2x.png in Resources */,
 				BA4119B516B44BAD00983454 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BA4119B816B44BAE00983454 /* MainStoryboard_iPad.storyboard in Resources */,
-				33588B1A16BB709300E85276 /* steve-jobs.png in Resources */,
-				BAE220F516BBA84000B39A03 /* Table BackGround.png in Resources */,
-				BAE220F616BBA84000B39A03 /* Table BackGround@2x.png in Resources */,
-				BAE220F816BBA97600B39A03 /* background.png in Resources */,
-				BAE220FA16BBAFA400B39A03 /* facebook-like-icon.png in Resources */,
+				BAA5EF3516BCBD2B00BF8D10 /* table background.png in Resources */,
+				BAA5EF3616BCBD2B00BF8D10 /* table background@2x.png in Resources */,
+				BAAFDAFE16BCC8DB00C5A39A /* CardBack@2x~ipad.png in Resources */,
+				BAAFDAFF16BCC8DB00C5A39A /* CardBack~ipad.png in Resources */,
+				BAAFDB0E16BCCEAB00C5A39A /* CardBack.png in Resources */,
+				BAAFDB0F16BCCEAB00C5A39A /* CardBack@2x.png in Resources */,
+				BAAFDB1116BCCEF500C5A39A /* Default-568h@2x.png in Resources */,
+				BAAFDB1416BCD45000C5A39A /* Deal Deck.png in Resources */,
+				BAAFDB1516BCD45000C5A39A /* Deal Deck@2x.png in Resources */,
+				BAAFDB1B16BCDAAC00C5A39A /* Default.png in Resources */,
+				BAAFDB1E16BCDAB300C5A39A /* Default@2x.png in Resources */,
+				BAAFDB2016BCDACC00C5A39A /* Default-Portrait~ipad.png in Resources */,
+				BAAFDB2216BCDB7100C5A39A /* Default-Portrait@2x~ipad.png in Resources */,
+				BAAFDB2416BCDB7600C5A39A /* Default-Landscape~ipad.png in Resources */,
+				BAAFDB2616BCDB7800C5A39A /* Default-Landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
