@@ -15,9 +15,6 @@
 		BA4119A616B44BAC00983454 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA4119A416B44BAC00983454 /* InfoPlist.strings */; };
 		BA4119A816B44BAC00983454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4119A716B44BAC00983454 /* main.m */; };
 		BA4119AC16B44BAC00983454 /* CardGameAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4119AB16B44BAC00983454 /* CardGameAppDelegate.m */; };
-		BA4119AE16B44BAC00983454 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BA4119AD16B44BAC00983454 /* Default.png */; };
-		BA4119B016B44BAD00983454 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA4119AF16B44BAD00983454 /* Default@2x.png */; };
-		BA4119B216B44BAD00983454 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA4119B116B44BAD00983454 /* Default-568h@2x.png */; };
 		BA4119B516B44BAD00983454 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4119B316B44BAD00983454 /* MainStoryboard_iPhone.storyboard */; };
 		BA4119B816B44BAE00983454 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4119B616B44BAE00983454 /* MainStoryboard_iPad.storyboard */; };
 		BA4119C316B44BB100983454 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4119C216B44BB100983454 /* SenTestingKit.framework */; };

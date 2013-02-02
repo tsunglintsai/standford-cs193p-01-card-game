@@ -19,13 +19,18 @@
         BOOL matchRank = TRUE;        
         BOOL matchSuit = TRUE;
         
-        for(PlayingCard *card in cardArray){
-            if(self.rank != card.rank){
-                matchRank = false;
-            }
-            
-            if(![self.suit isEqualToString: card.suit]){
-                matchSuit = false;
+        for(id card in cardArray){ // iterator through each element in array
+            if([card isKindOfClass:[PlayingCard class]]){ 
+                PlayingCard *playingCard = (PlayingCard*) card;
+                
+                if(self.rank != playingCard.rank){
+                    matchRank = false;
+                }
+                
+                if(![self.suit isEqualToString: playingCard.suit]){
+                    matchSuit = false;
+                }
+                
             }
         }
         
