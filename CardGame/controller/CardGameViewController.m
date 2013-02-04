@@ -38,7 +38,7 @@
     if(!_timer){
         double timerInterval = 0.5;
         _timer = [NSTimer scheduledTimerWithTimeInterval: timerInterval target:self selector:@selector(replay:) userInfo:nil repeats: YES];
-        }
+    }
     return _timer;
 }
 
@@ -100,38 +100,38 @@
 
 + (NSString*) getFlipResultString:(CardMatchingGame*)game{
     NSString *lastFlipResult = @"";
-    
+    NSMutableArray *resultString = [[NSMutableArray alloc]init];
+
     if(game.pointsEarnInLastOperation == FLIP_PENALTY ){
         
         Card *flippedCard = [game.cardsInlastOperation lastObject];
-        lastFlipResult = [@"Flipped up " stringByAppendingString:flippedCard.contents];
+        [resultString addObjectsFromArray:@[@"Flipped up",flippedCard.contents]];
         
     }else if(game.pointsEarnInLastOperation > 0){
         
-        lastFlipResult = @"Matched ";
+        [resultString addObject:@"Matched"];
         for(Card *matchedCard in game.cardsInlastOperation){
-            lastFlipResult = [lastFlipResult stringByAppendingString:matchedCard.contents];
+            [resultString addObject:matchedCard.contents];
             if(![[game.cardsInlastOperation lastObject] isEqual:matchedCard]){
-                lastFlipResult = [lastFlipResult stringByAppendingString:@" & "];
+                [resultString addObject:@"&"];
             }
         }
-        lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" for %d points", game.pointsEarnInLastOperation]];
+        [resultString addObject:[NSString stringWithFormat:@" for %d points", game.pointsEarnInLastOperation]];
         
         
     }else if(game.pointsEarnInLastOperation < 0){
         
         for(Card *matchedCard in game.cardsInlastOperation){
-            lastFlipResult = [lastFlipResult stringByAppendingString:matchedCard.contents];
+            [resultString addObject:matchedCard.contents];
             if(![[game.cardsInlastOperation lastObject] isEqual:matchedCard]){
-                lastFlipResult = [lastFlipResult stringByAppendingString:@" & "];
+                [resultString addObject:@" & "];
             }
         }
-        lastFlipResult = [lastFlipResult stringByAppendingString:@" don't mach!"];
-        lastFlipResult = [lastFlipResult stringByAppendingString:[NSString stringWithFormat:@" %d points penalty!", abs(game.pointsEarnInLastOperation)]];
-        
+        [resultString addObject:@" don't mach!"];
+        [resultString addObject:[NSString stringWithFormat:@" %d points penalty!", abs(game.pointsEarnInLastOperation)]];
         
     }
-    
+    lastFlipResult = [resultString componentsJoinedByString:@" "];
     return lastFlipResult;
 }
 
@@ -181,6 +181,7 @@
 - (IBAction)flipCard:(UIButton *)sender {
     self.replayButton.enabled = YES;
     self.replayButton.alpha = 1.0;
+    
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     [self updateUI];
     self.flipCount++;
@@ -194,6 +195,7 @@
 - (IBAction)dealButtonClicked:(id)sender {
     self.replayButton.enabled = NO;
     self.replayButton.alpha = Disable_Alpha;
+    
     [self.timer invalidate];
     self.timer = nil;
     self.game = nil;

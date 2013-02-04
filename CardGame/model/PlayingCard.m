@@ -9,6 +9,7 @@
 #import "PlayingCard.h"
 
 @interface PlayingCard()
+@property(strong, nonatomic) UIImage *playingCardImage;
 
 @end
 
@@ -75,26 +76,20 @@
     }
 }
 
--(UIImage*) cardImage{
+-(UIImage*) playingCardImage{
+    if(!_playingCardImage){
+        NSDictionary *suitName = @{@"♥":@"heart", @"♦":@"diamond", @"♠":@"spade", @"♣":@"club"};
+        NSString *filePrefix = [suitName objectForKey:self.suit];
+        if(filePrefix){
+            NSString *fileName = [@[filePrefix,[NSNumber numberWithInteger:self.rank]] componentsJoinedByString:@"-"];
+            _playingCardImage = [UIImage imageNamed:fileName];
+        }
+    }
+    return _playingCardImage;
+}
 
-    UIImage *result;
-    NSString *filePrefix;
-    if([self.suit isEqualToString:@"♥"]){
-        filePrefix = @"heart";
-    }else if([self.suit isEqualToString:@"♦"]){
-        filePrefix = @"diamond";
-    }else if([self.suit isEqualToString:@"♠"]){
-        filePrefix = @"spade";
-    }else if([self.suit isEqualToString:@"♣"]){
-        filePrefix = @"club";
-    }
-    if(filePrefix){
-        NSString *fileName = [@[filePrefix,[NSNumber numberWithInteger:self.rank]] componentsJoinedByString:@"-"];
-        result = [UIImage imageNamed:fileName];
-    }
-    
-    
-    return result;
+-(UIImage*) cardImage{
+    return self.playingCardImage;
 }
 
 @end
