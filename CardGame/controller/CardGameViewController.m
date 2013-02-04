@@ -141,9 +141,10 @@
         Card *card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
         [button setTitle:card.contents forState:UIControlStateSelected];
         [button setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
+        
         [button setTitle:card.contents forState:UIControlStateNormal ];
-        [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-        [button setImage:card.isFaceup? nil : self.cardBackImage forState:UIControlStateNormal];
+        [button setImageEdgeInsets:UIEdgeInsetsMake (1, -1, -1, -1)];
+        [button setImage:card.isFaceup? card.cardImage : self.cardBackImage forState:UIControlStateNormal];
 
         if(button.selected != card.isFaceup){
             [UIView beginAnimations:@"flipbutton" context:NULL];
@@ -229,4 +230,7 @@
     self.replaySlider.value = 0;
     [self.timer fire];
 }
+
+
+
 @end

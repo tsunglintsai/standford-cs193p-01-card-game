@@ -13,6 +13,8 @@
 
 @property(nonatomic, getter = isFaceup) BOOL faceup;
 @property(nonatomic, getter = isUnplayable) BOOL unplayable;
+@property(strong, nonatomic) UIImage *cardImage;
+
 -(int) match:(NSArray*) cardArray;
               
 @end
