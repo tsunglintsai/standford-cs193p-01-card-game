@@ -353,6 +353,7 @@
 				BAA5EF3416BCBD2B00BF8D10 /* table background@2x.png */,
 			);
 			name = images;
+			path = image;
 			sourceTree = "<group>";
 		};
 		BA41198C16B44BAB00983454 = {
