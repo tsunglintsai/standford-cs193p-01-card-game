@@ -356,7 +356,7 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		BA41198C16B44BAB00983454 = {
+		33CECD1016C58A2F009D2042 /* Launch Images */ = {
 			isa = PBXGroup;
 			children = (
 				BAAFDB2516BCDB7800C5A39A /* Default-Landscape@2x~ipad.png */,
@@ -366,6 +366,14 @@
 				BAAFDB1D16BCDAB300C5A39A /* Default@2x.png */,
 				BAAFDB1A16BCDAAC00C5A39A /* Default.png */,
 				BAAFDB1016BCCEF500C5A39A /* Default-568h@2x.png */,
+			);
+			name = "Launch Images";
+			sourceTree = "<group>";
+		};
+		BA41198C16B44BAB00983454 = {
+			isa = PBXGroup;
+			children = (
+				33CECD1016C58A2F009D2042 /* Launch Images */,
 				BA4119A116B44BAC00983454 /* CardGame */,
 				BA4119C816B44BB100983454 /* CardGameTests */,
 				BA41199A16B44BAC00983454 /* Frameworks */,

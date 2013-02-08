@@ -8,6 +8,10 @@
 
 #import "Deck.h"
 
+/**
+ * A PlayingCardDeck object represents a deck with 52 PlaygingCard in it.
+ *
+ **/
 @interface PlayingCardDeck : Deck
 
 @end
