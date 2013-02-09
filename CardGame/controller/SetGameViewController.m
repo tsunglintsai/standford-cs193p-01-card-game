@@ -14,6 +14,10 @@
 @end
 
 @implementation SetGameViewController
-
+- (void)updateUI{
+    NSLog(@"ui update");
+    
+    
+}
 
 @end

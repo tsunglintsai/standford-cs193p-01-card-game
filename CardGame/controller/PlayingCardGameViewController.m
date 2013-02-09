@@ -7,13 +7,30 @@
 //
 
 #import "PlayingCardGameViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface PlayingCardGameViewController ()
 @property (strong, nonatomic) UIImage *cardBackImage;
+@property (strong, nonatomic) PlayingCardDeck *playingCardDeck;
 
 @end
 
 @implementation PlayingCardGameViewController
+
+-(PlayingCardDeck*)playingCardDeck{
+    if(!_playingCardDeck){
+        _playingCardDeck = [[PlayingCardDeck alloc]init];
+    }
+    return _playingCardDeck;
+}
+
+-(NSUInteger)numberOfMatchedCardInGame{
+    return 3;
+}
+
+-(Deck*)deck{
+    return self.playingCardDeck;
+}
 
 -(UIImage*) cardBackImage{
     if(!_cardBackImage){

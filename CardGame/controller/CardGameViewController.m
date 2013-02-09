@@ -18,11 +18,9 @@
 
 @implementation CardGameViewController
 
-
-
 -(CardMatchingGame*) game{
     if(!_game){
-        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init] withMatchCardNumber:2];
+        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:self.deck withMatchCardNumber:self.numberOfMatchedCardInGame];
     }
     return _game;
 }

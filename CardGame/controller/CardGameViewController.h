@@ -42,6 +42,16 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 
 /**
+ * The Deck object used for playing game.
+ **/
+@property (strong, nonatomic) Deck *deck;
+
+/**
+ * The number of card needed to be match in game in order to get points.
+ **/
+@property (nonatomic) NSUInteger numberOfMatchedCardInGame;
+
+/**
  * The label showing current score.
  **/
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
@@ -52,7 +62,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 
 ///---------------------------------------------------------------------------------------
-/// @name CardGameViewController Attributes
+/// @name Set Gameing Logic and UI visual
 ///---------------------------------------------------------------------------------------
 
 /**
@@ -61,6 +71,16 @@
  * @return flip result
  **/
 + (NSString*) getFlipResultString:(CardMatchingGame*)game;
+
+/**
+ * UI updated when flip is done
+ **/
+- (void)updateUI;
+
+///---------------------------------------------------------------------------------------
+/// @name Perform UI Target Action Call Back
+///---------------------------------------------------------------------------------------
+
 
 /**
  * perform action when a deal button is clicked
@@ -73,10 +93,5 @@
  * @param sender button that been clicked
  **/
 - (IBAction)flipCard:(UIButton *)sender;
-
-/**
- * UI updated when flip is done
- **/
-- (void)updateUI;
 
 @end
