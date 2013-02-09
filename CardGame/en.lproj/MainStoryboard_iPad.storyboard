@@ -531,50 +531,6 @@
                                     <action selector="dealButtonClicked:" destination="2" eventType="touchUpInside" id="eEb-La-Faq"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4w5-X0-Tv8">
-                                <rect key="frame" x="898" y="705" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="2"/>
-                                    <segment title="3"/>
-                                </segments>
-                                <connections>
-                                    <action selector="dealButtonClicked:" destination="2" eventType="valueChanged" id="F6k-Wa-LCB"/>
-                                </connections>
-                            </segmentedControl>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" id="Y8d-pg-M9v">
-                                <rect key="frame" x="230" y="705" width="632" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <color key="maximumTrackTintColor" white="0.5" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="thumbTintColor" red="0.33312586280788753" green="0.52156862749999999" blue="0.34282334241868256" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="replaySliderValueChange:" destination="2" eventType="valueChanged" id="WSa-uS-r6r"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" text="Match Card Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="agJ-a8-T6F">
-                                <rect key="frame" x="880" y="676" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CNK-zW-Hpl">
-                                <rect key="frame" x="156" y="694" width="66" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Replay">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="replayButtonClicked:" destination="2" eventType="touchUpInside" id="1eT-ht-NkC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Deal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7P-sr-tUo">
                                 <rect key="frame" x="44" y="682" width="76" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -588,11 +544,8 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="cardMatchNumberSegmentedControll" destination="4w5-X0-Tv8" id="KUE-sq-WkN"/>
                         <outlet property="flipsLabel" destination="6mW-15-gQt" id="ccL-hs-MN4"/>
                         <outlet property="lastFlipResultLabel" destination="Nj2-JN-g3f" id="ELi-6Y-xGN"/>
-                        <outlet property="replayButton" destination="CNK-zW-Hpl" id="ldT-Pc-6Oi"/>
-                        <outlet property="replaySlider" destination="Y8d-pg-M9v" id="h72-nd-JsD"/>
                         <outlet property="scoreLabel" destination="uyK-jm-NDb" id="0oi-V1-CR5"/>
                         <outletCollection property="cardButtons" destination="C7x-OA-9d4" id="zTY-qB-KAX"/>
                         <outletCollection property="cardButtons" destination="EhI-cg-niR" id="Fq9-Wc-cZA"/>
@@ -643,13 +596,8 @@
             <relationships>
                 <relationship kind="action" name="dealButtonClicked:"/>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
-                <relationship kind="action" name="replayButtonClicked:" candidateClass="UIButton"/>
-                <relationship kind="action" name="replaySliderValueChange:" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="cardMatchNumberSegmentedControll" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="replayButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="replaySlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
