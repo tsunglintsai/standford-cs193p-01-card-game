@@ -79,7 +79,7 @@
 - (IBAction)flipCard:(UIButton *)sender {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     [self updateUI];
-
+    self.flipCount++;
 }
 
 - (IBAction)dealButtonClicked:(id)sender {

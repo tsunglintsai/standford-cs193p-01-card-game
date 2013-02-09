@@ -23,7 +23,9 @@
                 for(NSString *shading in [SetGameCard validShading]){
                     for(NSString *color in [SetGameCard validColor]) {
                         SetGameCard *card = [[SetGameCard alloc]initWithNumber:[number unsignedIntegerValue] withSymbol:symbol withShading:shading withColor:color];
-                        [self addCard:card atTop:YES];
+                        if(card){
+                            [self addCard:card atTop:YES];
+                        }
                     }
                 }
             }

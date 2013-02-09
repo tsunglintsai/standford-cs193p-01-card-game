@@ -719,7 +719,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sf6-dC-dtv">
-                                <rect key="frame" x="20" y="390" width="36" height="21"/>
+                                <rect key="frame" x="0.0" y="384" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -736,15 +736,18 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dealButtonClicked:" destination="b6c-M4-UFp" eventType="touchUpInside" id="gU8-QI-7jO"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9bw-O4-zZa">
-                                <rect key="frame" x="236" y="384" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9bw-O4-zZa">
+                                <rect key="frame" x="205" y="384" width="115" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KSc-PY-vH5">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touch Any Card to Begin the Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KSc-PY-vH5">
                                 <rect key="frame" x="17" y="333" width="283" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -756,6 +759,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="U47-4u-kxN"/>
                     <connections>
+                        <outlet property="flipsLabel" destination="Sf6-dC-dtv" id="HEG-Tw-cQw"/>
+                        <outlet property="lastFlipResultLabel" destination="KSc-PY-vH5" id="8gY-gq-cwb"/>
+                        <outlet property="scoreLabel" destination="9bw-O4-zZa" id="WXW-lB-pux"/>
                         <outletCollection property="cardButtons" destination="iGu-pn-4Ww" id="PtO-zA-0Qx"/>
                         <outletCollection property="cardButtons" destination="ABi-3C-By1" id="rZk-Uc-UuZ"/>
                         <outletCollection property="cardButtons" destination="TK6-rf-TAX" id="4TN-f2-58f"/>
