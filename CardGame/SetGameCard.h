@@ -65,26 +65,26 @@
 
 /**
  * Gets the number of SetGameCard object
- * @return array of NSNumber .
+ * @return set of NSNumber.
  **/
-+(NSArray*) validNumbers;
++(NSSet*) validNumbers;
 
 /**
  * Gets the symbol of SetGameCard object
- * @return array of NSString.
+ * @return set of NSString.
  **/
-+(NSArray*) validSymbol;
++(NSSet*) validSymbol;
 
 /**
  * Gets the shading of SetGameCard object
- * @return array of NSString.
+ * @return set of NSString.
  **/
-+(NSArray*) validShading;
++(NSSet*) validShading;
 
 /**
  * Gets the color of SetGameCard object
- * @return array of NSString.
+ * @return set of NSString.
  **/
-+(NSArray*) validColor;
++(NSSet*) validColor;
 
 @end
