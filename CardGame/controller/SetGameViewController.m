@@ -16,6 +16,4 @@
 @implementation SetGameViewController
 
 
-- (IBAction)flipCard:(UIButton *)sender {
-}
 @end
