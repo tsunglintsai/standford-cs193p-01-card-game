@@ -16,25 +16,23 @@
 - (id)initWithNumber:(NSUInteger)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
     self = [super init];
     if(self){
+        
         self.number = number;
         self.symbol = symbol;
         self.shading = shading;
         self.color = color;
-        
-        // if value is not valid, then return nil 
-        if(![[[self class]validNumbers] containsObject: @(self.number)]){
-            self = nil;
-        }else if(![[[self class]validSymbol] containsObject: self.symbol]){
-            self = nil;
-        }else if(![[[self class]validShading] containsObject: self.shading]){
-            self = nil;
-        }else if(![[[self class]validColor] containsObject: self.color]){
+
+        // if any value is not valid, then return nil
+        if(!self.number |!self.symbol | !self.shading | !self.color ){
             self = nil;
         }
     }
     return self;
 }
 
+-(NSString*) contents{
+    return self.symbol;
+}
 
 -(int) match:(NSArray*) cardArray{
     int score = 0;
@@ -54,19 +52,19 @@
 }
 
 -(void)setSymbol:(NSString *)symbol{
-    if(![[[self class]validSymbol] containsObject: symbol]){
+    if([[[self class]validSymbol] containsObject: symbol]){
         _symbol = symbol;
     }
 }
 
 -(void)setShading:(NSString *)shading{
-    if([[[self class]validNumbers] containsObject: shading]){
+    if([[[self class]validShading] containsObject: shading]){
         _shading = shading;
     }
 }
 
 -(void)setColor:(NSString *)color{
-    if(![[[self class]validColor] containsObject: color]){
+    if([[[self class]validColor] containsObject: color]){
         _color = color;
     }
 }
