@@ -14,50 +14,13 @@
  **/
 @interface SetGameCard : Card
 
-typedef enum {
-    SetGameCardNumberOne,
-    SetGameCardNumberTwo,
-    SetGameCardNumberThree
-} SetGameCardNumber;
-
-typedef enum {
-    SetGameCardNumberDiamond,
-    SetGameCardNumberSquiggle,
-    SetGameCardNumberOval
-} SetGameCardSymbol;
-
-typedef enum {
-    SetGameCardNumberSolid,
-    SetGameCardNumberStriped,
-    SetGameCardNumberOpen
-} SetGameCardShading;
-
-typedef enum {
-    SetGameCardNumberRed,
-    SetGameCardNumberGreen,
-    SetGameCardNumberPurple
-} SetGameCardColor;
 
 ///---------------------------------------------------------------------------------------
-/// @name SetGameCard Attributes
+/// @name Get Card Content
 ///---------------------------------------------------------------------------------------
 
 /**
- * The value of number.
+ * The attributed string content of card.
  **/
-@property (nonatomic) SetGameCardNumber number;
-/**
- * The value of symbol.
- **/
-@property (nonatomic) SetGameCardSymbol symbol;
-/**
- * The value of shading.
- **/
-@property (nonatomic) SetGameCardShading shading;
-/**
- * The value of color.
- **/
-@property (nonatomic) SetGameCardColor color;
-
-
+-(NSAttributedString*) getContentAsAttributedString;
 @end
