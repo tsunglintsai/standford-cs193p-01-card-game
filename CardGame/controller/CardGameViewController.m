@@ -9,31 +9,16 @@
 #import "CardGameViewController.h"
 #import "PlayingCard.h"
 #import "PlayingCardDeck.h"
-#import "CardMatchingGame.h"
 #import "QuartzCore/QuartzCore.h"
 
 @interface CardGameViewController()
 
-@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
-@property (nonatomic) int flipCount;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (strong, nonatomic) CardMatchingGame *game;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
-@property (strong, nonatomic) UIImage *cardBackImage;
-
-#define Disable_Alpha 0.6
 
 @end
 
 @implementation CardGameViewController
 
--(UIImage*) cardBackImage{
-    if(!_cardBackImage){
-        _cardBackImage = [UIImage imageNamed:@"CardBack.png"];
-    }
-    return _cardBackImage;
-}
+
 
 -(CardMatchingGame*) game{
     if(!_game){
@@ -91,39 +76,9 @@
 
 - (void)updateUI{
     
-    for(UIButton *button in self.cardButtons){
-        Card *card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
-        [button setTitle:card.contents forState:UIControlStateSelected];
-        [button setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
-        
-        [button setTitle:card.contents forState:UIControlStateNormal ];
-        [button setImageEdgeInsets:UIEdgeInsetsMake (1, -1, -1, -1)];
-        [button setImage:card.isFaceup? card.cardImage : self.cardBackImage forState:UIControlStateNormal];
-
-        if(button.selected != card.isFaceup){
-            [UIView beginAnimations:@"flipbutton" context:NULL];
-            [UIView setAnimationDuration:0.4];
-            [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:button cache:YES];
-            [UIView commitAnimations];
-        }
-        
-        button.selected = card.isFaceup;
-        button.enabled = !card.isUnplayable;
-        button.alpha = card.isUnplayable ? Disable_Alpha : 1;
-        button.adjustsImageWhenHighlighted = NO;
-        button.adjustsImageWhenDisabled = NO;
-        
-
-    }
-    self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
-    
-    self.lastFlipResultLabel.text = [CardGameViewController getFlipResultString:self.game];
-    
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
-
-    
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     [self updateUI];
 

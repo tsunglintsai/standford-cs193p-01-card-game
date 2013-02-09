@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="703" y="746"/>
         </scene>
-        <!--Card Game View Controller - PlayingCard Game-->
+        <!--Playing Card Game View Controller - PlayingCard Game-->
         <scene sceneID="4">
             <objects>
-                <viewController id="2" customClass="CardGameViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -675,6 +675,9 @@
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="PlayingCardGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardGameViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
