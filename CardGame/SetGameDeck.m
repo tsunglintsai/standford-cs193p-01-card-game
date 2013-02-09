@@ -15,19 +15,21 @@
  *
  **/
 -(SetGameDeck*) init{
-    /*
+    
     self = [super init];
     if(self){
-        for(NSString *suit in [PlayingCard validSuits]){
-            for(NSInteger rank = 1 ; rank <= [PlayingCard maxRank]; rank++){
-                PlayingCard *card = [[PlayingCard alloc]init];
-                card.rank = rank;
-                card.suit = suit;
-                [self addCard:card atTop:YES];
+        for(NSNumber *number in [SetGameCard validNumbers]){
+            for(NSString *symbol in [SetGameCard validSymbol] ){
+                for(NSString *shading in [SetGameCard validShading]){
+                    for(NSString *color in [SetGameCard validColor]) {
+                        SetGameCard *card = [[SetGameCard alloc]initWithNumber:[number unsignedIntegerValue] withSymbol:symbol withShading:shading withColor:color];
+                        [self addCard:card atTop:YES];
+                    }
+                }
             }
         }
     }
-    */
+    
     return self;
 }
 
