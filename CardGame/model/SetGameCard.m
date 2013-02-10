@@ -7,10 +7,30 @@
 //
 
 #import "SetGameCard.h"
+
 @interface SetGameCard()
 
 @end
 @implementation SetGameCard
+
+NSString *const MyFirstConstant = @"FirstConstant";
+NSString *const MySecondConstant = @"SecondConstant";
+
+/**
+ * List of card constant
+ **/
+NSUInteger  const SetGameNumberOne      = 1;
+NSUInteger  const SetGameNumberTwo      = 2;
+NSUInteger  const SetGameNumberThree    = 3;
+NSString   *const SetGameSymbolDiamond  = @"diamond";
+NSString   *const SetGameSymbolSquiggle = @"squiggle";
+NSString   *const SetGameSymbolOval     = @"oval";
+NSString   *const SetGameShadingSolid   = @"solid";
+NSString   *const SetGameShadingStriped = @"striped";
+NSString   *const SetGameShadingOpen    = @"open";
+NSString   *const SetGameColorRed       = @"red";
+NSString   *const SetGameColorGreen     = @"green";
+NSString   *const SetGameColorPurple    = @"purple";
 
 - (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
     self = [super init];

@@ -32,6 +32,22 @@
  **/
 @interface SetGameCard : Card
 
+/**
+ * List of card constant
+ **/
+FOUNDATION_EXPORT NSUInteger const SetGameNumberOne;
+FOUNDATION_EXPORT NSUInteger const SetGameNumberTwo;
+FOUNDATION_EXPORT NSUInteger const SetGameNumberThree;
+FOUNDATION_EXPORT NSString *const SetGameSymbolDiamond;
+FOUNDATION_EXPORT NSString *const SetGameSymbolSquiggle;
+FOUNDATION_EXPORT NSString *const SetGameSymbolOval;
+FOUNDATION_EXPORT NSString *const SetGameShadingSolid;
+FOUNDATION_EXPORT NSString *const SetGameShadingStriped;
+FOUNDATION_EXPORT NSString *const SetGameShadingOpen;
+FOUNDATION_EXPORT NSString *const SetGameColorRed;
+FOUNDATION_EXPORT NSString *const SetGameColorGreen;
+FOUNDATION_EXPORT NSString *const SetGameColorPurple;
+
 ///---------------------------------------------------------------------------------------
 /// @name Convenience Initializer
 ///---------------------------------------------------------------------------------------
@@ -61,6 +77,8 @@
  * The value of color.
  **/
 @property (strong,nonatomic) NSString *color;
+
+
 
 ///---------------------------------------------------------------------------------------
 /// @name Get Card Content
