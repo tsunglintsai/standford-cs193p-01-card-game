@@ -28,13 +28,13 @@
         _cardsWithNoSet = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
 
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberOne withSymbol: SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberOne) withSymbol: SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWithNoSet addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberOne withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberOne) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWithNoSet addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberThree withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberThree) withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
         [_cardsWithNoSet addObject:card];
     }
     return [_cardsWithNoSet copy];
@@ -44,13 +44,13 @@
         _cardsWith1SetSameNumber = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetSameNumber addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetSameNumber addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
         [_cardsWith1SetSameNumber addObject:card];
     }
     return [_cardsWith1SetSameNumber copy];
@@ -61,13 +61,13 @@
         _cardsWith2Set = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith2Set addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith2Set addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingOpen withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingOpen withColor:SetGameColorPurple];
         [_cardsWith2Set addObject:card];
     }
     return [_cardsWith2Set copy];
@@ -78,13 +78,13 @@
         _cardsWith3Set = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith3Set addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith3Set addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorPurple];
         [_cardsWith3Set addObject:card];
     }
     return [_cardsWith3Set copy];
@@ -95,13 +95,13 @@
         _cardsWith4Set = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorGreen];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorGreen];
         [_cardsWith4Set addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith4Set addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorPurple];
         [_cardsWith4Set addObject:card];
     }
     return [_cardsWith4Set copy];
@@ -112,13 +112,13 @@
         _cardsWith1SetDifferentNumber = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberThree withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberThree) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetDifferentNumber addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberOne withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberOne) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetDifferentNumber addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
         [_cardsWith1SetDifferentNumber addObject:card];
     }
     return [_cardsWith1SetDifferentNumber copy];
@@ -129,13 +129,13 @@
         _cardsWith1SetSameSymbol = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberOne withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberOne) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetSameSymbol addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetSameSymbol addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolDiamond withShading:SetGameShadingOpen withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingOpen withColor:SetGameColorPurple];
         [_cardsWith1SetSameSymbol addObject:card];
     }
     return [_cardsWith1SetSameSymbol copy];
@@ -146,13 +146,13 @@
         _cardsWith1SetDifferentSymbol = [[NSMutableArray alloc]initWithCapacity:3];
         SetGameCard *card;
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberOne withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberOne) withSymbol:SetGameSymbolDiamond withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetDifferentSymbol addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolOval withShading:SetGameShadingSolid withColor:SetGameColorRed];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolOval withShading:SetGameShadingSolid withColor:SetGameColorRed];
         [_cardsWith1SetDifferentSymbol addObject:card];
         
-        card = [[SetGameCard alloc]initWithNumber:SetGameNumberTwo withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
+        card = [[SetGameCard alloc]initWithNumber:@(SetGameNumberTwo) withSymbol:SetGameSymbolSquiggle withShading:SetGameShadingOpen withColor:SetGameColorPurple];
         [_cardsWith1SetDifferentSymbol addObject:card];
     }
     return [_cardsWith1SetDifferentSymbol copy];

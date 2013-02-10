@@ -16,9 +16,9 @@
 /**
  * List of card constant
  **/
-NSString  *const SetGameNumberOne      = @"one";
-NSString  *const SetGameNumberTwo      = @"two";
-NSString  *const SetGameNumberThree    = @"three";
+NSUInteger  const SetGameNumberOne      = 1;
+NSUInteger  const SetGameNumberTwo      = 2;
+NSUInteger  const SetGameNumberThree    = 3;
 NSString  *const SetGameSymbolDiamond  = @"diamond";
 NSString  *const SetGameSymbolSquiggle = @"squiggle";
 NSString  *const SetGameSymbolOval     = @"oval";
@@ -29,7 +29,7 @@ NSString  *const SetGameColorRed       = @"red";
 NSString  *const SetGameColorGreen     = @"green";
 NSString  *const SetGameColorPurple    = @"purple";
 
-- (id)initWithNumber:(NSString*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
+- (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
     self = [super init];
     if(self){
         
@@ -138,7 +138,7 @@ NSString  *const SetGameColorPurple    = @"purple";
     return nil;
 }
 
--(void)setNumber:(NSString*)number{
+-(void)setNumber:(NSNumber*)number{
     if([[[self class]validNumbers] containsObject: number]){
         _number = number;
     }
@@ -163,7 +163,7 @@ NSString  *const SetGameColorPurple    = @"purple";
 }
 
 +(NSSet*) validNumbers{
-    return[[[NSOrderedSet alloc] initWithArray: @[ SetGameNumberOne, SetGameNumberTwo, SetGameNumberThree ]]copy];
+    return[[[NSOrderedSet alloc] initWithArray: @[ @(SetGameNumberOne), @(SetGameNumberTwo), @(SetGameNumberThree) ]]copy];
 }
 
 +(NSSet*) validSymbol{

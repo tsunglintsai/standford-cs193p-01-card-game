@@ -35,9 +35,9 @@
 /**
  * List of card constant
  **/
-FOUNDATION_EXPORT NSString *const SetGameNumberOne;
-FOUNDATION_EXPORT NSString *const SetGameNumberTwo;
-FOUNDATION_EXPORT NSString *const SetGameNumberThree;
+FOUNDATION_EXPORT NSUInteger const SetGameNumberOne;
+FOUNDATION_EXPORT NSUInteger const SetGameNumberTwo;
+FOUNDATION_EXPORT NSUInteger const SetGameNumberThree;
 FOUNDATION_EXPORT NSString *const SetGameSymbolDiamond;
 FOUNDATION_EXPORT NSString *const SetGameSymbolSquiggle;
 FOUNDATION_EXPORT NSString *const SetGameSymbolOval;
@@ -55,7 +55,7 @@ FOUNDATION_EXPORT NSString *const SetGameColorPurple;
 /**
  * Returns a newly initialized SetGameCard object with value specified.
  **/
-- (id)initWithNumber:(NSString*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color;
+- (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color;
 
 ///---------------------------------------------------------------------------------------
 /// @name SetGameCard Attributes
@@ -64,7 +64,7 @@ FOUNDATION_EXPORT NSString *const SetGameColorPurple;
 /**
  * The value of number.
  **/
-@property (strong,nonatomic) NSString *number;
+@property (strong,nonatomic) NSNumber *number;
 /**
  * The value of symbol.
  **/

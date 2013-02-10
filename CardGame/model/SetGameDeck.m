@@ -18,7 +18,7 @@
     
     self = [super init];
     if(self){
-        for(NSString *number in [SetGameCard validNumbers]){
+        for(NSNumber *number in [SetGameCard validNumbers]){
             for(NSString *symbol in [SetGameCard validSymbol] ){
                 for(NSString *shading in [SetGameCard validShading]){
                     for(NSString *color in [SetGameCard validColor]) {
