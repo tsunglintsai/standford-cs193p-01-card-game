@@ -66,13 +66,6 @@
 ///---------------------------------------------------------------------------------------
 
 /**
- * The NSString value of of flip result.
- * @param game engine object
- * @return flip result
- **/
-+ (NSString*) getFlipResultString:(CardMatchingGame*)game;
-
-/**
  * UI updated when flip is done
  **/
 - (void)updateUI;

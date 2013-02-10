@@ -45,7 +45,7 @@
         [button setTitle:[[NSNumber numberWithInt:[self.cardButtons indexOfObject:button]]description] forState:UIControlStateSelected];
         [button setTitle:[[NSNumber numberWithInt:[self.cardButtons indexOfObject:button]]description] forState:UIControlStateSelected|UIControlStateDisabled];
         [button setTitle:[[NSNumber numberWithInt:[self.cardButtons indexOfObject:button]]description] forState:UIControlStateNormal ];
-        NSLog(@"%i  isFacedUP:%i",[self.cardButtons indexOfObject:button], card.isFaceup);
+        //NSLog(@"%i  isFacedUP:%i",[self.cardButtons indexOfObject:button], card.isFaceup);
         
 
         button.backgroundColor = card.isFaceup ? [UIColor redColor]:[UIColor clearColor];
@@ -53,7 +53,7 @@
         button.selected = card.isFaceup;
         button.enabled = !card.isUnplayable;
         button.alpha = card.isUnplayable ? Disable_Alpha : 1;
-        NSLog(@"is button hilighted :%i",button.highlighted);
+        //NSLog(@"is button hilighted :%i",button.highlighted);
 
         
 
@@ -62,7 +62,7 @@
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
     
-    self.lastFlipResultLabel.text = [[self class] getFlipResultString:self.game];
+    //self.lastFlipResultLabel.text = [[self class] getFlipResultString:self.game];
     
 }
 @end
