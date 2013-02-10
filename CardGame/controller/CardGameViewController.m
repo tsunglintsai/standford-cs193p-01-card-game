@@ -51,7 +51,41 @@
     [self updateUI];
 }
 
-
-
++ (NSString*) getFlipResultString:(CardMatchingGame*)game{
+    NSString *lastFlipResult = @"";
+    NSMutableArray *resultString = [[NSMutableArray alloc]init];
+    
+    if(game.pointsEarnInLastOperation == FLIP_PENALTY ){
+        
+        Card *flippedCard = [game.cardsInlastOperation lastObject];
+        [resultString addObjectsFromArray:@[@"Flipped up",flippedCard.contents]];
+        
+    }else if(game.pointsEarnInLastOperation > 0){
+        
+        [resultString addObject:@"Matched"];
+        for(Card *matchedCard in game.cardsInlastOperation){
+            [resultString addObject:matchedCard.contents];
+            if(![[game.cardsInlastOperation lastObject] isEqual:matchedCard]){
+                [resultString addObject:@"&"];
+            }
+        }
+        [resultString addObject:[NSString stringWithFormat:@" for %d points", game.pointsEarnInLastOperation]];
+        
+        
+    }else if(game.pointsEarnInLastOperation < 0){
+        
+        for(Card *matchedCard in game.cardsInlastOperation){
+            [resultString addObject:matchedCard.contents];
+            if(![[game.cardsInlastOperation lastObject] isEqual:matchedCard]){
+                [resultString addObject:@" & "];
+            }
+        }
+        [resultString addObject:@" don't mach!"];
+        [resultString addObject:[NSString stringWithFormat:@" %d points penalty!", abs(game.pointsEarnInLastOperation)]];
+        
+    }
+    lastFlipResult = [resultString componentsJoinedByString:@" "];
+    return lastFlipResult;
+}
 
 @end

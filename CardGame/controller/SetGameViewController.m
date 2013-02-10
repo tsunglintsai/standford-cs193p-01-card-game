@@ -62,7 +62,24 @@
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
     
-    //self.lastFlipResultLabel.text = [[self class] getFlipResultString:self.game];
+    self.lastFlipResultLabel.attributedText = [[self class] getFlipResultAttributedString:self.game];
     
 }
+
+/**
+ * The NSString value of of flip result.
+ * @param game engine object
+ * @return flip result
+ **/
++ (NSAttributedString*) getFlipResultAttributedString:(CardMatchingGame*)game{
+    NSMutableAttributedString *result = [[NSMutableAttributedString alloc]init];
+    NSString *stringResult = [[self class]getFlipResultString:game];
+    
+    [result setAttributedString:[[NSAttributedString alloc]initWithString:stringResult]];
+    return [result copy];
+}
+
+
+
+
 @end
