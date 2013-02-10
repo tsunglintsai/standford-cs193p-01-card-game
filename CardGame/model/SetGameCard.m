@@ -13,26 +13,23 @@
 @end
 @implementation SetGameCard
 
-NSString *const MyFirstConstant = @"FirstConstant";
-NSString *const MySecondConstant = @"SecondConstant";
-
 /**
  * List of card constant
  **/
-NSUInteger  const SetGameNumberOne      = 1;
-NSUInteger  const SetGameNumberTwo      = 2;
-NSUInteger  const SetGameNumberThree    = 3;
-NSString   *const SetGameSymbolDiamond  = @"diamond";
-NSString   *const SetGameSymbolSquiggle = @"squiggle";
-NSString   *const SetGameSymbolOval     = @"oval";
-NSString   *const SetGameShadingSolid   = @"solid";
-NSString   *const SetGameShadingStriped = @"striped";
-NSString   *const SetGameShadingOpen    = @"open";
-NSString   *const SetGameColorRed       = @"red";
-NSString   *const SetGameColorGreen     = @"green";
-NSString   *const SetGameColorPurple    = @"purple";
+NSString  *const SetGameNumberOne      = @"one";
+NSString  *const SetGameNumberTwo      = @"two";
+NSString  *const SetGameNumberThree    = @"three";
+NSString  *const SetGameSymbolDiamond  = @"diamond";
+NSString  *const SetGameSymbolSquiggle = @"squiggle";
+NSString  *const SetGameSymbolOval     = @"oval";
+NSString  *const SetGameShadingSolid   = @"solid";
+NSString  *const SetGameShadingStriped = @"striped";
+NSString  *const SetGameShadingOpen    = @"open";
+NSString  *const SetGameColorRed       = @"red";
+NSString  *const SetGameColorGreen     = @"green";
+NSString  *const SetGameColorPurple    = @"purple";
 
-- (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
+- (id)initWithNumber:(NSString*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
     self = [super init];
     if(self){
         
@@ -141,7 +138,7 @@ NSString   *const SetGameColorPurple    = @"purple";
     return nil;
 }
 
--(void)setNumber:(NSNumber*)number{
+-(void)setNumber:(NSString*)number{
     if([[[self class]validNumbers] containsObject: number]){
         _number = number;
     }
@@ -166,7 +163,7 @@ NSString   *const SetGameColorPurple    = @"purple";
 }
 
 +(NSSet*) validNumbers{
-    return[[[NSOrderedSet alloc] initWithArray: @[ @1, @2, @3 ]]copy];
+    return[[[NSOrderedSet alloc] initWithArray: @[ @"one", @"two", @"three" ]]copy];
 }
 
 +(NSSet*) validSymbol{
