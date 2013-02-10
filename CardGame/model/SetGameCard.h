@@ -15,6 +15,19 @@
  *  - `symbol` : { diamond | squiggle | oval }
  *  - `shading` : { solid | striped | open }
  *  - `color` : { red | green | purple }
+ *
+ *  Following are rules that defines a 'set':
+ *
+ *  - They all have the same number, or they have three different numbers.
+ *
+ *  - They all have the same symbol, or they have three different symbols.
+ *
+ *  - They all have the same shading, or they have three different shadings.
+ *
+ *  - They all have the same color, or they have three different colors.
+ *
+ *  The rules of Set are summarized by: If you can sort a group of three cards into "Two of X and one of Y,"
+ *  then it is not a set.
  *  @warning *Note:* Any value can passed into attributed. However, class will ignore invalid values. reccomend use convenience initializer to create SetGameCard object;
  **/
 @interface SetGameCard : Card
@@ -26,7 +39,7 @@
 /**
  * Returns a newly initialized SetGameCard object with value specified.
  **/
-- (id)initWithNumber:(NSUInteger)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color;
+- (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color;
 
 ///---------------------------------------------------------------------------------------
 /// @name SetGameCard Attributes
@@ -35,7 +48,7 @@
 /**
  * The value of number.
  **/
-@property (nonatomic) NSUInteger number;
+@property (nonatomic) NSNumber *number;
 /**
  * The value of symbol.
  **/
