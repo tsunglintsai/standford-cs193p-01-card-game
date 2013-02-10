@@ -163,19 +163,19 @@ NSString  *const SetGameColorPurple    = @"purple";
 }
 
 +(NSSet*) validNumbers{
-    return[[[NSOrderedSet alloc] initWithArray: @[ @"one", @"two", @"three" ]]copy];
+    return[[[NSOrderedSet alloc] initWithArray: @[ SetGameNumberOne, SetGameNumberTwo, SetGameNumberThree ]]copy];
 }
 
 +(NSSet*) validSymbol{
-    return [[[NSOrderedSet alloc] initWithArray: @[@"diamond",@"squiggle",@"oval"]]copy];
+    return [[[NSOrderedSet alloc] initWithArray: @[ SetGameSymbolDiamond, SetGameSymbolSquiggle , SetGameSymbolOval]]copy];
 }
 
 +(NSSet*) validShading{
-    return [[[NSOrderedSet alloc] initWithArray:@[@"solid",@"striped",@"open"]]copy];
+    return [[[NSOrderedSet alloc] initWithArray: @[ SetGameShadingSolid, SetGameShadingStriped, SetGameShadingOpen]]copy];
 }
 
 +(NSSet*) validColor{
-    return [[[NSOrderedSet alloc] initWithArray:@[@"red",@"green",@"purple"]]copy];
+    return [[[NSOrderedSet alloc] initWithArray: @[ SetGameColorRed, SetGameColorGreen, SetGameColorPurple]]copy];
 }
 
 -(NSString*) description{
