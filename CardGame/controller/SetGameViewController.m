@@ -172,4 +172,7 @@
 +(UIColor*) lightRedColor{    return [UIColor colorWithRed:1 green:0 blue:0 alpha:0.3]; }
 +(UIColor*) lightPurpleColor{ return [UIColor colorWithRed:0 green:0 blue:1 alpha:0.3]; }
 
+-(NSString*) gameName{
+    return @"Set Game";
+}
 @end

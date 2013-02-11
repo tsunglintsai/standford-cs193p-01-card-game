@@ -10,13 +10,22 @@
 #import "PlayingCard.h"
 #import "PlayingCardDeck.h"
 #import "QuartzCore/QuartzCore.h"
+#import "GameResult.h"
 
 @interface CardGameViewController()
-
+@property (strong, nonatomic) GameResult *gameResult;
 
 @end
 
 @implementation CardGameViewController
+
+
+-(GameResult*) gameResult{
+    if(!_gameResult){
+        _gameResult = [[GameResult alloc]initWithGameName:self.gameName];
+    }
+    return _gameResult;
+}
 
 -(CardMatchingGame*) game{
     if(!_game){
@@ -42,6 +51,7 @@
 
 - (IBAction)flipCard:(UIButton *)sender {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
+    self.gameResult.score = self.game.score;
     [self updateUI];
     self.flipCount++;
 }
@@ -49,6 +59,8 @@
 - (IBAction)dealButtonClicked:(id)sender {
     self.game = nil;
     self.deck = nil;
+    self.gameResult = nil;
+    self.flipCount = 0;
     [self updateUI];
 }
 
@@ -88,5 +100,10 @@
     lastFlipResult = [resultString componentsJoinedByString:@" "];
     return lastFlipResult;
 }
+
+-(NSString*) gameName{
+    return @"";
+}
+
 
 @end

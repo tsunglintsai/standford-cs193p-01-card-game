@@ -61,6 +61,11 @@
  **/
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 
+/**
+ * The name of game.
+ **/
+@property (readonly, nonatomic) NSString *gameName;
+
 ///---------------------------------------------------------------------------------------
 /// @name Set Gameing Logic and UI visual
 ///---------------------------------------------------------------------------------------
