@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ * A UIViewController that showing score of the card game.
+ */
 @interface GameScoreViewController : UIViewController
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ * A UIViewController that allow user to perform setting the card game.
+ */
 @interface SettingViewController : UIViewController
 
 @end

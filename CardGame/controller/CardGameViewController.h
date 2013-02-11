@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CardMatchingGame.h"
 
-/** A UIViewController that handles playing card game.
- 
- Each instance describes a single source code comment for any object - class, category, protocol, method... As the comment is universal for each object, it contains properties for all fields applying to any kind of object. However not all are used in all cases. If a property is not used, it's value remains `nil`. Derived values are handled with:
- 
+/**
+ * A UIViewController that handles playing card game.
  */
 #define Disable_Alpha 0.4
 

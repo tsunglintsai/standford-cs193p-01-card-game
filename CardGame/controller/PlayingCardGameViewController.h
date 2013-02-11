@@ -7,6 +7,9 @@
 //
 
 #import "CardGameViewController.h"
+/**
+ * A UIViewController that handles Matchismo card game.
+ */
 
 @interface PlayingCardGameViewController : CardGameViewController
 
