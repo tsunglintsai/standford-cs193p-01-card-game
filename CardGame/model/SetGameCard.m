@@ -90,28 +90,6 @@ NSString  *const SetGameColorPurple    = @"purple";
     return result;
 }
 
-/**
- * get array of tokens from a SetGameCard object.
- * @param setGameCard a SetGameCard
- * @return Array of tokens. returns nil if input is not valid array of SetGameCard. 
- **/
-+(NSArray*)tokenArrayFromSetGameCard:(NSArray*)setGameCardArray{
-    NSMutableArray *tokenArray = [[NSMutableArray alloc]init];
-    for( id instance in setGameCardArray){
-        SetGameCard *setGameCard = (SetGameCard*)instance;
-        if([setGameCard isKindOfClass:[SetGameCard class]]){
-            if (setGameCard.number) {[tokenArray addObject:setGameCard.number];}
-            if (setGameCard.symbol) {[tokenArray addObject:setGameCard.symbol];}
-            if (setGameCard.shading){[tokenArray addObject:setGameCard.shading];}
-            if (setGameCard.color)  {[tokenArray addObject:setGameCard.color];}
-        }
-    }
-    NSLog(@"token count:%i",[tokenArray count]);
-    if([tokenArray count]!=3*4){
-        tokenArray = nil;
-    }
-    return [tokenArray copy];
-}
 
 /**
  * Returns a boolean value to specifiy weather elements in array is a set or not.
