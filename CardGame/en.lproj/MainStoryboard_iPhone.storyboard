@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Playing Card Game View Controller - PLayingGame-->
+        <!--Playing Card Game View Controller - Playing Card-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
@@ -323,7 +323,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="PLayingGame" id="9Aa-Wl-9vK"/>
+                    <tabBarItem key="tabBarItem" title="Playing Card" image="PlayingCardGameIcon.png" id="9Aa-Wl-9vK"/>
                     <connections>
                         <outlet property="flipsLabel" destination="ZBG-f7-iwl" id="SK5-1U-tQL"/>
                         <outlet property="lastFlipResultLabel" destination="bSy-g6-ugd" id="39g-wm-bju"/>
@@ -350,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="-95" y="-349"/>
         </scene>
-        <!--Set Game View Controller - Item-->
+        <!--Set Game View Controller - Set Game-->
         <scene sceneID="4yJ-OY-eKm">
             <objects>
                 <viewController id="b6c-M4-UFp" customClass="SetGameViewController" sceneMemberID="viewController">
@@ -737,7 +737,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="U47-4u-kxN"/>
+                    <tabBarItem key="tabBarItem" title="Set Game" image="SetGameIcon.png" id="U47-4u-kxN"/>
                     <connections>
                         <outlet property="flipsLabel" destination="Sf6-dC-dtv" id="HEG-Tw-cQw"/>
                         <outlet property="lastFlipResultLabel" destination="KSc-PY-vH5" id="8gY-gq-cwb"/>
@@ -781,7 +781,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" id="WBn-YV-jz3"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="SettingIcon.png" id="WBn-YV-jz3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuI-Yg-EMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -806,7 +806,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Score" id="5l7-Jr-Ug9"/>
+                    <tabBarItem key="tabBarItem" title="Score" image="ScoreIcon.png" id="5l7-Jr-Ug9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zC-iR-R9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -835,9 +835,35 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PlayingCardGameIcon.png" width="30" height="30"/>
+        <image name="ScoreIcon.png" width="30" height="30"/>
         <image name="SetGameBackground.png" width="320" height="496"/>
         <image name="SetGameCardBackground.png" width="65" height="45"/>
+        <image name="SetGameIcon.png" width="30" height="30"/>
+        <image name="SettingIcon.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CardGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dealButtonClicked:"/>
+                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="PlayingCardGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardGameViewController.h"/>
+        </class>
+        <class className="SetGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameViewController.h"/>
+            <relationships>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
