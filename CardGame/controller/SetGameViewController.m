@@ -42,6 +42,7 @@
 - (void)updateUI{
 
     for(UIButton *button in self.cardButtons){
+
         id card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
         if( [card isKindOfClass:[SetGameCard class]]){
             SetGameCard *setGameCard = card;
@@ -51,18 +52,8 @@
             [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard] forState:UIControlStateSelected];
             [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard] forState:UIControlStateSelected|UIControlStateDisabled];
             [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard] forState:UIControlStateNormal];
-
-            //NSLog(@"%i  isFacedUP:%i",[self.cardButtons indexOfObject:button], card.isFaceup);
-            
-
-            button.backgroundColor = setGameCard.isFaceup ? [UIColor redColor]:[UIColor clearColor];
-            //button.highlighted = setGameCard.isFaceup;
-            //button.selected = setGameCard.isFaceup;
-            //button.enabled = !setGameCard.isUnplayable;
+            button.backgroundColor = setGameCard.isUnplayable ? [UIColor clearColor] : setGameCard.isFaceup ? [UIColor blueColor]:[UIColor clearColor];
             button.alpha = setGameCard.isUnplayable ? Disable_Alpha : 1;
-            //NSLog(@"is button hilighted :%i",button.highlighted);
-
-        
         }
         
         
@@ -136,9 +127,9 @@
     }
     [result setAttributedString:[[NSAttributedString alloc]initWithString:cardDisplayString]];
     
-    NSDictionary *attribute = @{ NSFontAttributeName : [UIFont systemFontOfSize:18],
+    NSDictionary *attribute = @{ NSFontAttributeName : [UIFont systemFontOfSize:17],
     NSForegroundColorAttributeName : [[self class]forgroundColorForCard:setGameCard],
-    NSStrokeWidthAttributeName : @-5,
+    NSStrokeWidthAttributeName : @-10,
     NSStrokeColorAttributeName :  [[self class]strokeColorForCard:setGameCard] };
     
     [result setAttributes:attribute range:[[result string]rangeOfString:[result string]]];
@@ -148,9 +139,9 @@
 
 +(UIColor*)forgroundColorForCard:(SetGameCard*)card{
     NSDictionary *colorMap = @{
-        [@[SetGameColorGreen    ,SetGameShadingOpen] componentsJoinedByString:@""]:[UIColor clearColor],
-        [@[SetGameColorRed      ,SetGameShadingOpen] componentsJoinedByString:@""]:[UIColor clearColor],
-        [@[SetGameColorPurple   ,SetGameShadingOpen] componentsJoinedByString:@""]:[UIColor clearColor],
+        [@[SetGameColorGreen    ,SetGameShadingOpen] componentsJoinedByString:@""]:[UIColor whiteColor],
+        [@[SetGameColorRed      ,SetGameShadingOpen] componentsJoinedByString:@""]:[UIColor whiteColor],
+        [@[SetGameColorPurple   ,SetGameShadingOpen] componentsJoinedByString:@""]:[UIColor whiteColor],
 
         [@[SetGameColorGreen    ,SetGameShadingSolid] componentsJoinedByString:@""]:[[self class]greenColor],
         [@[SetGameColorRed      ,SetGameShadingSolid] componentsJoinedByString:@""]:[[self class]redColor],
@@ -177,8 +168,8 @@
 +(UIColor*) greenColor{       return [UIColor colorWithRed:0 green:1 blue:0 alpha:1]; }
 +(UIColor*) redColor{         return [UIColor colorWithRed:1 green:0 blue:0 alpha:1]; }
 +(UIColor*) purpleColor{      return [UIColor colorWithRed:0 green:0 blue:1 alpha:1]; }
-+(UIColor*) lightGreenColor{  return [UIColor colorWithRed:0 green:1 blue:0 alpha:0.1]; }
-+(UIColor*) lightRedColor{    return [UIColor colorWithRed:1 green:0 blue:0 alpha:0.1]; }
-+(UIColor*) lightPurpleColor{ return [UIColor colorWithRed:0 green:0 blue:1 alpha:0.1]; }
++(UIColor*) lightGreenColor{  return [UIColor colorWithRed:0 green:1 blue:0 alpha:0.3]; }
++(UIColor*) lightRedColor{    return [UIColor colorWithRed:1 green:0 blue:0 alpha:0.3]; }
++(UIColor*) lightPurpleColor{ return [UIColor colorWithRed:0 green:0 blue:1 alpha:0.3]; }
 
 @end
