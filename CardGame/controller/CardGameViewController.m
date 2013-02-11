@@ -48,6 +48,7 @@
 
 - (IBAction)dealButtonClicked:(id)sender {
     self.game = nil;
+    self.deck = nil;
     [self updateUI];
 }
 
