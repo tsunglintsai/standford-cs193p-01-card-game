@@ -19,7 +19,7 @@
 #define START_KEY @"StartDate"
 #define END_KEY @"EndDate"
 #define SCORE_KEY @"Score"
-#define GAME_NAME_KEY @"Score"
+#define GAME_NAME_KEY @"GameName"
 
 
 +(NSArray *)allGameResults{

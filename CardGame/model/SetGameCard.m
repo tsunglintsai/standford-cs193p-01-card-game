@@ -64,7 +64,6 @@ NSString  *const SetGameColorPurple    = @"purple";
         setQualifiedCount+= [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]  ? 1 : 0;
         
         score = setQualifiedCount==0 ? 0 : 1*pow(2,setQualifiedCount);
-        NSLog(@"score :%i with Deck %@",score,allThreeCards);
 
     }
     return score;
