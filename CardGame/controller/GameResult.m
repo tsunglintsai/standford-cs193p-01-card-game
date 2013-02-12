@@ -72,7 +72,7 @@
 
 
 -(id) asPropertyList{
-    return @{ GAME_NAME_KEY : self.gameName ,START_KEY : self.start , END_KEY : self.end , SCORE_KEY : @(self.score)};
+    return @{ START_KEY : self.start , END_KEY : self.end , SCORE_KEY : @(self.score),GAME_NAME_KEY : self.gameName };
 }
 
 -(id) init{

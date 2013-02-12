@@ -13,8 +13,8 @@
 @interface SetGameViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) SetGameDeck *setGameDeck;
+@property (nonatomic) CGFloat cardContentFontSize;
 @end
-
 
 @implementation SetGameViewController
 
@@ -40,18 +40,24 @@
 }
 
 - (void)updateUI{
-
+    if(!self.cardContentFontSize){
+        UIButton *button = [self.cardButtons lastObject];
+        self.cardContentFontSize = button.titleLabel.font.pointSize;
+    }
     for(UIButton *button in self.cardButtons){
 
         id card = [self.game cardAtIndex: [self.cardButtons indexOfObject:button]];
         if( [card isKindOfClass:[SetGameCard class]]){
             SetGameCard *setGameCard = card;
+            
             [button setTitle:[[NSNumber numberWithInt:[self.cardButtons indexOfObject:button]]description] forState:UIControlStateSelected];
             [button setTitle:[[NSNumber numberWithInt:[self.cardButtons indexOfObject:button]]description] forState:UIControlStateSelected|UIControlStateDisabled];
             [button setTitle:[[NSNumber numberWithInt:[self.cardButtons indexOfObject:button]]description] forState:UIControlStateNormal ];
-            [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard] forState:UIControlStateSelected];
-            [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard] forState:UIControlStateSelected|UIControlStateDisabled];
-            [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard] forState:UIControlStateNormal];
+            [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard withFontSize:self.cardContentFontSize] forState:UIControlStateSelected];
+            [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard withFontSize:self.cardContentFontSize] forState:UIControlStateSelected|UIControlStateDisabled];
+            [button setAttributedTitle:[[self class]attributedStringForCard:setGameCard withFontSize:self.cardContentFontSize] forState:UIControlStateNormal];
+            [button setImage:setGameCard.cardImage forState:UIControlStateNormal];
+            
             button.backgroundColor = setGameCard.isUnplayable ? [UIColor clearColor] : setGameCard.isFaceup ? [UIColor blueColor]:[UIColor clearColor];
             button.alpha = setGameCard.isUnplayable ? Disable_Alpha : 1;
         }
@@ -60,7 +66,7 @@
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"score:%d",self.game.score];
     
-    self.lastFlipResultLabel.attributedText = [[self class] getFlipResultAttributedString:self.game];
+    self.lastFlipResultLabel.attributedText = [[self class] getFlipResultAttributedString:self.game withFontSize:self.lastFlipResultLabel.font.pointSize];
     
 }
 
@@ -73,7 +79,7 @@
  * @param game engine object
  * @return flip result
  **/
-+ (NSAttributedString*) getFlipResultAttributedString:(CardMatchingGame*)game{
++ (NSAttributedString*) getFlipResultAttributedString:(CardMatchingGame*)game withFontSize:(CGFloat)fontSize{
     NSMutableAttributedString *result = [[NSMutableAttributedString alloc]init];
     
     
@@ -82,7 +88,7 @@
         [result appendAttributedString:[[NSAttributedString alloc]initWithString:@"Flipped up "]];
         for( id card in [game cardsInlastOperation]){
             if([card isKindOfClass:[SetGameCard class]]){
-                [result appendAttributedString:[[self class]attributedStringForCard:card]];
+                [result appendAttributedString:[[self class]attributedStringForCard:card withFontSize:fontSize]];
             }
         }
         
@@ -91,7 +97,7 @@
         [result appendAttributedString:[[NSAttributedString alloc]initWithString:@"Matched "]];
         for( id card in [game cardsInlastOperation]){
             if([card isKindOfClass:[SetGameCard class]]){
-                [result appendAttributedString:[[self class]attributedStringForCard:card]];
+                [result appendAttributedString:[[self class]attributedStringForCard:card withFontSize:fontSize]];
                 if(![[game.cardsInlastOperation lastObject] isEqual:card]){
                     [result appendAttributedString:[[NSAttributedString alloc]initWithString:@"& "]];
                 }
@@ -105,7 +111,7 @@
         
         for( id card in [game cardsInlastOperation]){
             if([card isKindOfClass:[SetGameCard class]]){
-                [result appendAttributedString:[[self class]attributedStringForCard:card]];
+                [result appendAttributedString:[[self class]attributedStringForCard:card withFontSize:fontSize]];
                 if(![[game.cardsInlastOperation lastObject] isEqual:card]){
                     [result appendAttributedString:[[NSAttributedString alloc]initWithString:@" & "]];
                 }
@@ -119,7 +125,7 @@
     return [result copy];
 }
 
-+(NSAttributedString*) attributedStringForCard:(SetGameCard*)setGameCard{
++(NSAttributedString*) attributedStringForCard:(SetGameCard*)setGameCard withFontSize:(CGFloat) fontSize{
     NSMutableAttributedString *result = [[NSMutableAttributedString alloc]init];
     NSString *cardDisplayString = @"";
     for(int i=0 ; i < [setGameCard.number intValue] ; i++){
@@ -127,7 +133,7 @@
     }
     [result setAttributedString:[[NSAttributedString alloc]initWithString:cardDisplayString]];
     
-    NSDictionary *attribute = @{ NSFontAttributeName : [UIFont systemFontOfSize:17],
+    NSDictionary *attribute = @{ NSFontAttributeName : [UIFont systemFontOfSize:fontSize],
     NSForegroundColorAttributeName : [[self class]forgroundColorForCard:setGameCard],
     NSStrokeWidthAttributeName : @-10,
     NSStrokeColorAttributeName :  [[self class]strokeColorForCard:setGameCard] };

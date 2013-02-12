@@ -20,12 +20,12 @@
     NSString *displayText = @"";
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM dd, yyyy"];
+    [formatter setDateFormat:@"HH:mm MMM dd"];
     
     
     for(GameResult *result in [GameResult allGameResults]){
         NSString* formattedDate = [formatter stringFromDate:result.end];
-        displayText = [displayText stringByAppendingFormat:@"%@ Score: %d (%@ for %g sec)\n",result.gameName, result.score, formattedDate, round(result.duration)];
+        displayText = [displayText stringByAppendingFormat:@"%@ Score: %d ( %@ for %g sec)\n",result.gameName, result.score, formattedDate, round(result.duration)];
     }
     if([displayText length]==0){
         displayText = @"There is no game score available! go to play some games.";
