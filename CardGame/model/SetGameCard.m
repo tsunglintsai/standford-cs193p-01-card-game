@@ -57,14 +57,19 @@ NSString  *const SetGameColorPurple    = @"purple";
         
         NSMutableArray *allThreeCards = [cardArray mutableCopy];
         [allThreeCards addObject:self];
-        int setQualifiedCount = 0;
-        setQualifiedCount+= [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]] ? 1 : 0;
-        setQualifiedCount+= [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(symbol)]] ? 1 : 0;
-        setQualifiedCount+= [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(shading)]]? 1 : 0;
-        setQualifiedCount+= [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]  ? 1 : 0;
+        score =
+        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]]  &&
+        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]]  &&
+        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(shading)]] &&
+        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]
+        ? 10 :0;
         
-        score = setQualifiedCount==0 ? 0 : 1*pow(2,setQualifiedCount);
-
+        NSLog(@"%i,%i,%i,%i",
+              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]] ,
+              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]],
+              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(shading)]],
+              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]);
+        
     }
     return score;
 }
