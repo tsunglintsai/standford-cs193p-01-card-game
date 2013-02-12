@@ -79,17 +79,6 @@ FOUNDATION_EXPORT NSString *const SetGameColorPurple;
 @property (strong,nonatomic) NSString *color;
 
 
-
-///---------------------------------------------------------------------------------------
-/// @name Get Card Content
-///---------------------------------------------------------------------------------------
-
-/**
- * Gets the attributed string content of card.
- * @return attributed string content.
- **/
--(NSAttributedString*) getContentAsAttributedString;
-
 ///---------------------------------------------------------------------------------------
 /// @name Get Valid Values
 ///---------------------------------------------------------------------------------------

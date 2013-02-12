@@ -58,7 +58,7 @@ NSString  *const SetGameColorPurple    = @"purple";
         NSMutableArray *allThreeCards = [cardArray mutableCopy];
         [allThreeCards addObject:self];
         score =
-        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]]  &&
+        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(symbol)]]  &&
         [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]]  &&
         [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(shading)]] &&
         [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]
@@ -109,10 +109,6 @@ NSString  *const SetGameColorPurple    = @"purple";
     return result;
 }
 
--(NSAttributedString*) getContentAsAttributedString{
-    // TODO: Add logic here
-    return nil;
-}
 
 -(void)setNumber:(NSNumber*)number{
     if([[[self class]validNumbers] containsObject: number]){
