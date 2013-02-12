@@ -64,12 +64,6 @@ NSString  *const SetGameColorPurple    = @"purple";
         [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]
         ? 10 :0;
         
-        NSLog(@"%i,%i,%i,%i",
-              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]] ,
-              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]],
-              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(shading)]],
-              [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]);
-        
     }
     return score;
 }
