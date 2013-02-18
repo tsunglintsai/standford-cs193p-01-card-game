@@ -71,13 +71,6 @@
 ///---------------------------------------------------------------------------------------
 /// @name Perform UI Target Action Call Back
 ///---------------------------------------------------------------------------------------
-
-/**
- * The NSString value of of flip result.
- * @param game engine object
- * @return flip result
- **/
-+ (NSString*) getFlipResultString:(CardMatchingGame*)game;
     
 /**
  * perform action when a deal button is clicked
