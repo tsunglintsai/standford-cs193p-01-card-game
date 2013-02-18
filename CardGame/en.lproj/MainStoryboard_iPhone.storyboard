@@ -101,88 +101,6 @@
             </objects>
             <point key="canvasLocation" x="-95" y="-349"/>
         </scene>
-        <!--Set Game View Controller - Set Game-->
-        <scene sceneID="4yJ-OY-eKm">
-            <objects>
-                <viewController id="b6c-M4-UFp" customClass="SetGameViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w0o-7b-TVO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jO-ps-KWZ">
-                                <color key="backgroundColor" red="0.87544469291688354" green="0.92665440597484494" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="472" id="vuv-9c-MvT"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf6-dC-dtv">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="Yhe-SY-l9g"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hw-ob-XDj">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="3qy-Gh-wcT"/>
-                                    <constraint firstAttribute="width" constant="63" id="hwU-SN-0eA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Deal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dealButtonClicked:" destination="b6c-M4-UFp" eventType="touchUpInside" id="gU8-QI-7jO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bw-O4-zZa">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="JUa-TO-1kq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touch Any Card to Begin the Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="KSc-PY-vH5">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="283" id="cVG-os-Z2s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9bw-O4-zZa" firstAttribute="baseline" secondItem="Sf6-dC-dtv" secondAttribute="baseline" type="default" id="2ne-Qr-Ltd"/>
-                            <constraint firstItem="KSc-PY-vH5" firstAttribute="top" secondItem="w0o-7b-TVO" secondAttribute="top" constant="3" id="8lS-w9-y9j"/>
-                            <constraint firstItem="Sf6-dC-dtv" firstAttribute="top" secondItem="w0o-7b-TVO" secondAttribute="top" constant="27" id="Bb2-h4-aft"/>
-                            <constraint firstItem="9jO-ps-KWZ" firstAttribute="centerX" secondItem="KSc-PY-vH5" secondAttribute="centerX" type="default" id="Cm5-if-rzQ"/>
-                            <constraint firstItem="9jO-ps-KWZ" firstAttribute="leading" secondItem="w0o-7b-TVO" secondAttribute="leading" type="default" id="Fyr-Vf-OIx"/>
-                            <constraint firstItem="9bw-O4-zZa" firstAttribute="top" secondItem="9jO-ps-KWZ" secondAttribute="top" type="default" id="MKA-Qa-HI7"/>
-                            <constraint firstItem="4Hw-ob-XDj" firstAttribute="leading" secondItem="KSc-PY-vH5" secondAttribute="leading" type="default" id="OsF-5K-0Hc"/>
-                            <constraint firstItem="Sf6-dC-dtv" firstAttribute="leading" secondItem="w0o-7b-TVO" secondAttribute="leading" constant="6" id="hks-JA-KQj"/>
-                            <constraint firstAttribute="bottom" secondItem="4Hw-ob-XDj" secondAttribute="bottom" constant="5" id="i1M-O7-F4D"/>
-                            <constraint firstAttribute="trailing" secondItem="9bw-O4-zZa" secondAttribute="trailing" constant="5" id="tNL-KR-dPI"/>
-                            <constraint firstItem="9jO-ps-KWZ" firstAttribute="trailing" secondItem="w0o-7b-TVO" secondAttribute="trailing" type="default" id="uZF-hZ-Jfa"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Set Game" image="SetGameIcon.png" id="U47-4u-kxN"/>
-                    <connections>
-                        <outlet property="flipsLabel" destination="Sf6-dC-dtv" id="HEG-Tw-cQw"/>
-                        <outlet property="lastFlipResultLabel" destination="KSc-PY-vH5" id="8gY-gq-cwb"/>
-                        <outlet property="scoreLabel" destination="9bw-O4-zZa" id="WXW-lB-pux"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9cu-o7-wgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="353" y="-221"/>
-        </scene>
         <!--Setting View Controller - Setting-->
         <scene sceneID="MAh-Hk-xyj">
             <objects>
@@ -217,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuI-Yg-EMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95" y="870"/>
+            <point key="canvasLocation" x="-430" y="791"/>
         </scene>
         <!--Game Score View Controller - Score-->
         <scene sceneID="xdJ-bg-tU7">
@@ -248,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zC-iR-R9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="395"/>
+            <point key="canvasLocation" x="-3" y="407"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gjg-0w-R4M">
@@ -262,14 +180,111 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="fKX-pr-9LD"/>
-                        <segue destination="b6c-M4-UFp" kind="relationship" relationship="viewControllers" id="Lie-0t-fqN"/>
-                        <segue destination="EXZ-II-vNc" kind="relationship" relationship="viewControllers" id="TUg-Ow-7KH"/>
-                        <segue destination="Fww-5l-l8B" kind="relationship" relationship="viewControllers" id="Wcu-97-NjP"/>
+                        <segue destination="uBT-t6-dOh" kind="relationship" relationship="viewControllers" id="TCg-eT-WUl"/>
+                        <segue destination="EXZ-II-vNc" kind="relationship" relationship="viewControllers" id="mFE-ll-VJU"/>
+                        <segue destination="Fww-5l-l8B" kind="relationship" relationship="viewControllers" id="2nl-rR-Bq0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqL-Jv-ifs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-791" y="103"/>
+        </scene>
+        <!--Playing Card Game View Controller - Matchismo-->
+        <scene sceneID="cUt-XJ-1ru">
+            <objects>
+                <viewController id="uBT-t6-dOh" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ICe-No-di6">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXb-eZ-uVQ">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMc-gM-TCG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="score:0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj3-ai-2Bd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="Nvf-tG-B7h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touch Any Card to Flip It." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ofp-f5-MTZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6W-yb-3GV">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Deal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealButtonClicked:" destination="uBT-t6-dOh" eventType="touchUpInside" id="xRx-es-PZx"/>
+                                </connections>
+                            </button>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8sW-RP-JQl">
+                                <color key="backgroundColor" red="0.2785394404" green="0.61518429490000004" blue="0.42103457560000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="311" id="kSb-ak-IUu"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BAI-jQ-F5E">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="43s-13-yIh">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oXb-eZ-uVQ" secondAttribute="bottom" constant="251" id="2pn-KO-1BV"/>
+                            <constraint firstItem="8sW-RP-JQl" firstAttribute="trailing" secondItem="ICe-No-di6" secondAttribute="trailing" type="default" id="7hy-2d-ZEg"/>
+                            <constraint firstItem="aMc-gM-TCG" firstAttribute="leading" secondItem="ICe-No-di6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8Hl-1o-MBg"/>
+                            <constraint firstItem="oXb-eZ-uVQ" firstAttribute="top" secondItem="ICe-No-di6" secondAttribute="top" type="default" id="9vm-PS-Aio"/>
+                            <constraint firstItem="g6W-yb-3GV" firstAttribute="top" secondItem="Ofp-f5-MTZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="G08-5F-GOa"/>
+                            <constraint firstItem="8sW-RP-JQl" firstAttribute="top" secondItem="ICe-No-di6" secondAttribute="top" constant="-2" id="KwX-jx-Xyz"/>
+                            <constraint firstItem="aMc-gM-TCG" firstAttribute="baseline" secondItem="g6W-yb-3GV" secondAttribute="baseline" type="default" id="Ld2-6B-fzR"/>
+                            <constraint firstItem="g6W-yb-3GV" firstAttribute="leading" secondItem="aMc-gM-TCG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OJ2-yM-7o4"/>
+                            <constraint firstAttribute="bottom" secondItem="g6W-yb-3GV" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="OsD-CZ-gCE"/>
+                            <constraint firstItem="Ofp-f5-MTZ" firstAttribute="centerX" secondItem="oXb-eZ-uVQ" secondAttribute="centerX" type="default" id="TS5-gx-XbR"/>
+                            <constraint firstItem="oXb-eZ-uVQ" firstAttribute="leading" secondItem="ICe-No-di6" secondAttribute="leading" type="default" id="eba-WY-Edt"/>
+                            <constraint firstItem="8sW-RP-JQl" firstAttribute="leading" secondItem="ICe-No-di6" secondAttribute="leading" type="default" id="iGS-mU-5Oi"/>
+                            <constraint firstItem="g6W-yb-3GV" firstAttribute="centerX" secondItem="Ofp-f5-MTZ" secondAttribute="centerX" type="default" id="mY4-IF-DQA"/>
+                            <constraint firstItem="aj3-ai-2Bd" firstAttribute="baseline" secondItem="g6W-yb-3GV" secondAttribute="baseline" type="default" id="rQI-09-nGv"/>
+                            <constraint firstItem="aj3-ai-2Bd" firstAttribute="leading" secondItem="g6W-yb-3GV" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="v3b-Zz-2Wu"/>
+                            <constraint firstItem="8sW-RP-JQl" firstAttribute="trailing" secondItem="oXb-eZ-uVQ" secondAttribute="trailing" type="default" id="vZL-CQ-gPe"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Matchismo" image="SetGameIcon.png" id="XF4-lu-QkC"/>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="8sW-RP-JQl" id="VG8-1C-FSg"/>
+                        <outlet property="flipsLabel" destination="aMc-gM-TCG" id="9PA-bo-FfR"/>
+                        <outlet property="lastFlipResultLabel" destination="Ofp-f5-MTZ" id="I3T-dl-Ewf"/>
+                        <outlet property="scoreLabel" destination="aj3-ai-2Bd" id="KmP-nI-Ajl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPf-TR-ZDo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="-159"/>
         </scene>
     </scenes>
     <resources>
@@ -288,7 +303,6 @@
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="GameScoreViewController" superclassName="UIViewController">
@@ -302,12 +316,6 @@
         </class>
         <class className="PlayingCardGameViewController" superclassName="CardGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardGameViewController.h"/>
-        </class>
-        <class className="SetGameViewController" superclassName="CardGameViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameViewController.h"/>
-            <relationships>
-                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
-            </relationships>
         </class>
         <class className="SettingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>

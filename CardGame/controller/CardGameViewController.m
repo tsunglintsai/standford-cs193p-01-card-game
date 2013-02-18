@@ -29,14 +29,9 @@
 
 -(CardMatchingGame*) game{
     if(!_game){
-        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:[self getCardDeck] withMatchCardNumber:self.numberOfMatchedCardInGame];
+        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self initialCardNumber] usingDeck:[self getCardDeck] withMatchCardNumber:self.numberOfMatchedCardInGame];
     }
     return _game;
-}
-
--(void) setCardButtons:(NSArray *)cardButtons{
-    _cardButtons = cardButtons;
-    [self updateUI];    
 }
 
 - (void)setFlipCount:(int)flipCount{
@@ -50,7 +45,7 @@
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
-    [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
+    //[self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.gameResult.score = self.game.score;
     [self updateUI];
     self.flipCount++;
@@ -70,5 +65,10 @@
 - (Deck*)getCardDeck{
     return nil;
 }
+
+- (NSUInteger)initialCardNumber{
+    return 0;
+}
+
 
 @end

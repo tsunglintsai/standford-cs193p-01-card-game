@@ -29,4 +29,8 @@
 -(NSString*) gameName{
     return @"Set Game";
 }
+
+- (NSUInteger)initialCardNumber{
+    return 12;
+}
 @end

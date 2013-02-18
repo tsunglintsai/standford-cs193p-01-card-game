@@ -9,7 +9,6 @@
 #import "SetGameCard.h"
 
 @interface SetGameCard()
-@property (strong,nonatomic) UIImage *setGameCardImage;
 @end
 @implementation SetGameCard
 
@@ -154,18 +153,5 @@ NSString  *const SetGameColorPurple    = @"purple";
     return [@[self.number,self.symbol,self.shading,self.color]componentsJoinedByString:@","] ;
 }
 
--(UIImage*) setGameCardImage{
-    if(!_setGameCardImage){
-        NSString *filePrefix = @"SetGameCard";
-        if(filePrefix){
-            NSString *fileName = [@[filePrefix,self.symbol,self.shading,self.color,self.number] componentsJoinedByString:@"_"];
-            _setGameCardImage = [UIImage imageNamed:fileName];
-        }
-    }
-    return _setGameCardImage;
-}
 
--(UIImage*) cardImage{
-    return self.setGameCardImage;
-}
 @end

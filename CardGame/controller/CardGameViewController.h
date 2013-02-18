@@ -25,15 +25,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 
 /**
- * The name of game.
+ * The collection view objects holds all cards
  **/
 @property (weak, nonatomic) IBOutlet UICollectionView *cardCollectionView;
-
-/**
- * The UIButton array that presents as cards.
- **/
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-
 
 /**
  * The flip count value.
@@ -92,11 +86,15 @@
 - (IBAction)flipCard:(UIButton *)sender;
 
 /**
- * perform action when a button is clicked
- * @param sender button that been clicked
+ * get Deck object contains cards
+ * @return a Deck
  **/
 - (Deck*)getCardDeck;
 
-
+/**
+ * get card number which used for initilaized the game
+ * @return card number
+ **/
+- (NSUInteger)initialCardNumber;
 
 @end

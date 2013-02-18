@@ -34,11 +34,6 @@
  **/
 @property(nonatomic, getter = isUnplayable) BOOL unplayable;
 
-/** 
- * The image that presents the content of card..
- **/
-@property(strong, nonatomic) UIImage *cardImage;
-
 ///---------------------------------------------------------------------------------------
 /// @name Comparing Card
 ///---------------------------------------------------------------------------------------
