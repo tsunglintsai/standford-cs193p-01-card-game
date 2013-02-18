@@ -32,22 +32,6 @@
  **/
 @interface SetGameCard : Card
 
-/**
- * List of card constant
- **/
-FOUNDATION_EXPORT NSUInteger const SetGameNumberOne;
-FOUNDATION_EXPORT NSUInteger const SetGameNumberTwo;
-FOUNDATION_EXPORT NSUInteger const SetGameNumberThree;
-FOUNDATION_EXPORT NSString *const SetGameSymbolDiamond;
-FOUNDATION_EXPORT NSString *const SetGameSymbolSquiggle;
-FOUNDATION_EXPORT NSString *const SetGameSymbolOval;
-FOUNDATION_EXPORT NSString *const SetGameShadingSolid;
-FOUNDATION_EXPORT NSString *const SetGameShadingStriped;
-FOUNDATION_EXPORT NSString *const SetGameShadingOpen;
-FOUNDATION_EXPORT NSString *const SetGameColorRed;
-FOUNDATION_EXPORT NSString *const SetGameColorGreen;
-FOUNDATION_EXPORT NSString *const SetGameColorPurple;
-
 ///---------------------------------------------------------------------------------------
 /// @name Convenience Initializer
 ///---------------------------------------------------------------------------------------
@@ -55,7 +39,7 @@ FOUNDATION_EXPORT NSString *const SetGameColorPurple;
 /**
  * Returns a newly initialized SetGameCard object with value specified.
  **/
-- (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color;
+- (id)initWithNumber:(NSUInteger)number withSymbol:(NSUInteger)symbol withShading:(NSUInteger)shading withColor:(NSUInteger)color;
 
 ///---------------------------------------------------------------------------------------
 /// @name SetGameCard Attributes
@@ -64,19 +48,19 @@ FOUNDATION_EXPORT NSString *const SetGameColorPurple;
 /**
  * The value of number.
  **/
-@property (strong,nonatomic) NSNumber *number;
+@property (readonly, nonatomic) NSUInteger number;
 /**
  * The value of symbol.
  **/
-@property (strong,nonatomic) NSString *symbol;
+@property (readonly, nonatomic) NSUInteger symbol;
 /**
  * The value of shading.
  **/
-@property (strong,nonatomic) NSString *shading;
+@property (readonly, nonatomic) NSUInteger shading;
 /**
  * The value of color.
  **/
-@property (strong,nonatomic) NSString *color;
+@property (readonly, nonatomic) NSUInteger color;
 
 
 ///---------------------------------------------------------------------------------------
@@ -84,27 +68,27 @@ FOUNDATION_EXPORT NSString *const SetGameColorPurple;
 ///---------------------------------------------------------------------------------------
 
 /**
- * Gets the number of SetGameCard object
+ * Gets the max value of number of SetGameCard object
  * @return set of NSNumber.
  **/
-+(NSSet*) validNumbers;
++(NSUInteger) maxNumber;
 
 /**
- * Gets the symbol of SetGameCard object
+ * Gets the max value of symbol of SetGameCard object
  * @return set of NSString.
  **/
-+(NSSet*) validSymbol;
++(NSUInteger) maxSymbol;
 
 /**
- * Gets the shading of SetGameCard object
+ * Gets the max value of shading of SetGameCard object
  * @return set of NSString.
  **/
-+(NSSet*) validShading;
++(NSUInteger) maxShading;
 
 /**
- * Gets the color of SetGameCard object
+ * Gets the max value of color of SetGameCard object
  * @return set of NSString.
  **/
-+(NSSet*) validColor;
++(NSUInteger) maxColor;
 
 @end

@@ -9,26 +9,16 @@
 #import "SetGameCard.h"
 
 @interface SetGameCard()
+
+@property (readwrite, nonatomic) NSUInteger number;
+@property (readwrite, nonatomic) NSUInteger symbol;
+@property (readwrite, nonatomic) NSUInteger shading;
+@property (readwrite, nonatomic) NSUInteger color;
+
 @end
 @implementation SetGameCard
 
-/**
- * List of card constant
- **/
-NSUInteger  const SetGameNumberOne      = 1;
-NSUInteger  const SetGameNumberTwo      = 2;
-NSUInteger  const SetGameNumberThree    = 3;
-NSString  *const SetGameSymbolDiamond  = @"diamond";
-NSString  *const SetGameSymbolSquiggle = @"squiggle";
-NSString  *const SetGameSymbolOval     = @"oval";
-NSString  *const SetGameShadingSolid   = @"solid";
-NSString  *const SetGameShadingStriped = @"striped";
-NSString  *const SetGameShadingOpen    = @"open";
-NSString  *const SetGameColorRed       = @"red";
-NSString  *const SetGameColorGreen     = @"green";
-NSString  *const SetGameColorPurple    = @"purple";
-
-- (id)initWithNumber:(NSNumber*)number withSymbol:(NSString*)symbol withShading:(NSString*)shading withColor:(NSString*)color{
+- (id)initWithNumber:(NSUInteger)number withSymbol:(NSUInteger)symbol withShading:(NSUInteger)shading withColor:(NSUInteger)color{
     self = [super init];
     if(self){
         
@@ -38,7 +28,7 @@ NSString  *const SetGameColorPurple    = @"purple";
         self.color = color;
 
         // if any value is not valid, then return nil
-        if(!self.number |!self.symbol | !self.shading | !self.color ){
+        if( self.number >= [[self class]maxNumber] || self.symbol >= [[self class]maxSymbol] || self.shading >= [[self class]maxShading] || self.color >= [[self class]maxColor] ){
             self = nil;
         }
     }
@@ -46,112 +36,51 @@ NSString  *const SetGameColorPurple    = @"purple";
 }
 
 
--(NSString*) contents{
-    return self.symbol;
-}
-
 -(int) match:(NSArray*) cardArray{
     int score = 0;
-    if([cardArray count]==2){ // game set must compare 3 cards, one itself and two other cards
+    if([cardArray count]==2){ // set game must compare 3 cards, one itself and two other cards
         
         NSMutableArray *allThreeCards = [cardArray mutableCopy];
         [allThreeCards addObject:self];
-        score =
-        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(symbol)]]  &&
-        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(number)]]  &&
-        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(shading)]] &&
-        [[self class]isSet:[[self class] getSameItemFromCards: allThreeCards withSelector: @selector(color)]]
-        ? 10 :0;
-        
+        NSUInteger sumOfSymbol=0,sumOfNumber=0,sumOfShading=0,sumOfColor=0;
+        for(id card in allThreeCards){
+            if([card isKindOfClass:[SetGameCard class]]){
+                SetGameCard *setGameCard = card;
+                sumOfSymbol += setGameCard.symbol;
+                sumOfNumber += setGameCard.number;
+                sumOfShading += setGameCard.shading;
+                sumOfColor += setGameCard.color;
+                NSLog(@"process card:%@",setGameCard);
+                NSLog(@"sums:%@",[@[@(sumOfSymbol),@(sumOfNumber),@(sumOfShading),@(sumOfColor)] componentsJoinedByString:@","]);
+                
+            }else{ // if any object in array is not set game card,then return 0
+                return 0;
+            }
+        }
+        NSLog(@"sums:%@",[@[@(sumOfSymbol),@(sumOfSymbol),@(sumOfShading),@(sumOfColor)] componentsJoinedByString:@","]);
+        score = (sumOfSymbol % 3 == 0 && sumOfNumber % 3 == 0 && sumOfShading % 3 == 0 && sumOfColor % 3 == 0) ? 10 :0;
     }
     return score;
 }
 
-/**
- * Returns list of object in same group of each card in card array
- * @param cards a SetGameCard array
- * @return array of item in same group
- **/
-+(NSArray*) getSameItemFromCards:(NSArray*)cards withSelector:(SEL)getter{
-    NSMutableArray *result = [[NSMutableArray alloc]init];
-    for(id card in cards){
-        if ([card isKindOfClass:[SetGameCard class]]){
-            SetGameCard *setGameCard = card;
-            #pragma clang diagnostic push
-            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            id attribute = [setGameCard performSelector:getter];
-            #pragma clang diagnostic pop
-            [result addObject:attribute];
-        }
-    }
-    return result;
++(NSUInteger) maxNumber{
+    return 3;
 }
 
-
-/**
- * Returns a boolean value to specifiy weather elements in array is a set or not.
- * @param array array to be evluated
- * @return if group of elements is a set or not.
- **/
-+(BOOL) isSet:(NSArray*) array{
-    BOOL result = true;
-    for(id token in array){
-        int tokenCountInArray = [[array indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-            return [obj isEqual:token];
-        }]count];
-        if(tokenCountInArray == 1  || tokenCountInArray == [array count]){
-            // do nothing
-        }else{
-            result = false;
-        }
-    }
-    return result;
++(NSUInteger) maxSymbol{
+    return 3;
 }
 
-
--(void)setNumber:(NSNumber*)number{
-    if([[[self class]validNumbers] containsObject: number]){
-        _number = number;
-    }
++(NSUInteger) maxShading{
+    return 3;
 }
 
--(void)setSymbol:(NSString *)symbol{
-    if([[[self class]validSymbol] containsObject: symbol]){
-        _symbol = symbol;
-    }
-}
-
--(void)setShading:(NSString *)shading{
-    if([[[self class]validShading] containsObject: shading]){
-        _shading = shading;
-    }
-}
-
--(void)setColor:(NSString *)color{
-    if([[[self class]validColor] containsObject: color]){
-        _color = color;
-    }
-}
-
-+(NSSet*) validNumbers{
-    return[[[NSOrderedSet alloc] initWithArray: @[ @(SetGameNumberOne), @(SetGameNumberTwo), @(SetGameNumberThree) ]]copy];
-}
-
-+(NSSet*) validSymbol{
-    return [[[NSOrderedSet alloc] initWithArray: @[ SetGameSymbolDiamond, SetGameSymbolSquiggle , SetGameSymbolOval]]copy];
-}
-
-+(NSSet*) validShading{
-    return [[[NSOrderedSet alloc] initWithArray: @[ SetGameShadingSolid, SetGameShadingStriped, SetGameShadingOpen]]copy];
-}
-
-+(NSSet*) validColor{
-    return [[[NSOrderedSet alloc] initWithArray: @[ SetGameColorRed, SetGameColorGreen, SetGameColorPurple]]copy];
++(NSUInteger) maxColor{
+    return 3;
 }
 
 -(NSString*) description{
-    return [@[self.number,self.symbol,self.shading,self.color]componentsJoinedByString:@","] ;
+    return [@[@(self.number),@(self.symbol),@(self.shading),@(self.color)]componentsJoinedByString:@","];
 }
-
 
 @end

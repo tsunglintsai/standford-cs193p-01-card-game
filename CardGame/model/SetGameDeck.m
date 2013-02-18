@@ -18,10 +18,10 @@
     
     self = [super init];
     if(self){
-        for(NSNumber *number in [SetGameCard validNumbers]){
-            for(NSString *symbol in [SetGameCard validSymbol] ){
-                for(NSString *shading in [SetGameCard validShading]){
-                    for(NSString *color in [SetGameCard validColor]) {
+        for(NSUInteger number = 0 ; number < [SetGameCard maxNumber] ; number++){
+            for(NSUInteger symbol = 0 ; symbol < [SetGameCard maxSymbol] ; symbol++ ){
+                for(NSUInteger shading = 0 ; shading < [SetGameCard maxShading] ; shading++){
+                    for(NSUInteger color = 0 ; color < [SetGameCard maxColor] ; color++) {
                         SetGameCard *card = [[SetGameCard alloc]initWithNumber:number withSymbol:symbol withShading:shading withColor:color];
                         if(card){
                             [self addCard:card atTop:YES];
