@@ -18,25 +18,8 @@
 
 @implementation SetGameViewController
 
--(SetGameDeck*)setGameDeck{
-    if(!_setGameDeck){
-        _setGameDeck = [[SetGameDeck alloc]init];
-    }
-    return _setGameDeck;
-}
-
--(NSUInteger)numberOfMatchedCardInGame{
-    return 3;
-}
-
--(Deck*)deck{
-    return self.setGameDeck;
-}
-
--(void)setDeck:(Deck *)deck{
-    if([deck isKindOfClass:[SetGameDeck class]] || !deck){
-        _setGameDeck = (SetGameDeck*) deck;
-    }
+- (Deck*)getCardDeck{
+    return [[SetGameDeck alloc]init];
 }
 
 - (void)updateUI{

@@ -11,32 +11,13 @@
 
 @interface PlayingCardGameViewController ()
 @property (strong, nonatomic) UIImage *cardBackImage;
-@property (strong, nonatomic) PlayingCardDeck *playingCardDeck;
 @end
 
 @implementation PlayingCardGameViewController
 
-@synthesize playingCardDeck = _playingCardDeck;
-
--(PlayingCardDeck*)playingCardDeck{
-    if(!_playingCardDeck){
-        _playingCardDeck = [[PlayingCardDeck alloc]init];
-    }
-    return _playingCardDeck;
-}
 
 -(NSUInteger)numberOfMatchedCardInGame{
     return 2;
-}
-
--(Deck*)deck{
-    return self.playingCardDeck;
-}
-
--(void)setDeck:(Deck *)deck{
-    if([deck isKindOfClass:[PlayingCardDeck class]] || !deck){
-        _playingCardDeck = (PlayingCardDeck*) deck;
-    }
 }
 
 -(UIImage*) cardBackImage{
@@ -81,4 +62,9 @@
 -(NSString*) gameName{
     return @"Matchismo";
 }
+
+- (Deck*)getCardDeck{
+    return [[PlayingCardDeck alloc]init];
+}
+
 @end

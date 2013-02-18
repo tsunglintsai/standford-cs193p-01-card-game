@@ -29,7 +29,7 @@
 
 -(CardMatchingGame*) game{
     if(!_game){
-        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:self.deck withMatchCardNumber:self.numberOfMatchedCardInGame];
+        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self.cardButtons count] usingDeck:[self getCardDeck] withMatchCardNumber:self.numberOfMatchedCardInGame];
     }
     return _game;
 }
@@ -58,7 +58,6 @@
 
 - (IBAction)dealButtonClicked:(id)sender {
     self.game = nil;
-    self.deck = nil;
     self.gameResult = nil;
     self.flipCount = 0;
     [self updateUI];
@@ -105,5 +104,8 @@
     return @"";
 }
 
+- (Deck*)getCardDeck{
+    return nil;
+}
 
 @end

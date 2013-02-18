@@ -40,11 +40,6 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 
 /**
- * The Deck object used for playing game.
- **/
-@property (strong, nonatomic) Deck *deck;
-
-/**
  * The number of card needed to be match in game in order to get points.
  **/
 @property (nonatomic) NSUInteger numberOfMatchedCardInGame;
@@ -95,5 +90,13 @@
  * @param sender button that been clicked
  **/
 - (IBAction)flipCard:(UIButton *)sender;
+
+/**
+ * perform action when a button is clicked
+ * @param sender button that been clicked
+ **/
+- (Deck*)getCardDeck;
+
+
 
 @end
