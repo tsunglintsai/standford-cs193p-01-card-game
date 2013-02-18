@@ -25,14 +25,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 
 /**
- * The flip count value.
+ * The name of game.
  **/
-@property (nonatomic) int flipCount;
+@property (weak, nonatomic) IBOutlet UICollectionView *cardCollectionView;
 
 /**
  * The UIButton array that presents as cards.
  **/
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+
+
+/**
+ * The flip count value.
+ **/
+@property (nonatomic) int flipCount;
 
 /**
  * The CardMachingGame engine object.
@@ -58,6 +64,7 @@
  * The name of game.
  **/
 @property (readonly, nonatomic) NSString *gameName;
+
 
 ///---------------------------------------------------------------------------------------
 /// @name Set Gameing Logic and UI visual

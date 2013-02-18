@@ -47,6 +47,9 @@
                             </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chw-OX-lmO">
                                 <color key="backgroundColor" red="0.2785394404" green="0.61518429490000004" blue="0.42103457560000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="311" id="V5b-l7-Fme"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jqr-ej-SGL">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -69,7 +72,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xss-2y-enz" firstAttribute="baseline" secondItem="2Zk-YE-QJy" secondAttribute="baseline" type="default" id="15Z-cc-2e8"/>
+                            <constraint firstItem="Chw-OX-lmO" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-2" id="2ch-kz-qlq"/>
                             <constraint firstAttribute="bottom" secondItem="2Zk-YE-QJy" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="B2t-77-fpZ"/>
+                            <constraint firstItem="Chw-OX-lmO" firstAttribute="trailing" secondItem="0jb-ez-rXr" secondAttribute="trailing" type="default" id="H4y-hB-pXM"/>
                             <constraint firstItem="Xss-2y-enz" firstAttribute="leading" secondItem="2Zk-YE-QJy" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="K6V-uh-Hqn"/>
                             <constraint firstItem="0jb-ez-rXr" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Ljf-BB-a1h"/>
                             <constraint firstItem="Chw-OX-lmO" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Nh4-a9-qwf"/>
@@ -78,17 +83,15 @@
                             <constraint firstItem="0jb-ez-rXr" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="cCk-Ls-ln0"/>
                             <constraint firstItem="Chw-OX-lmO" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="dB9-Iy-utD"/>
                             <constraint firstItem="2Zk-YE-QJy" firstAttribute="leading" secondItem="ZBG-f7-iwl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hlL-EA-YFs"/>
-                            <constraint firstItem="0jb-ez-rXr" firstAttribute="centerX" secondItem="Chw-OX-lmO" secondAttribute="centerX" type="default" id="jRm-NS-EwJ"/>
-                            <constraint firstItem="Chw-OX-lmO" firstAttribute="centerX" secondItem="bSy-g6-ugd" secondAttribute="centerX" type="default" id="pWG-0i-aiy"/>
-                            <constraint firstItem="Chw-OX-lmO" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="stR-Im-HgF"/>
+                            <constraint firstItem="bSy-g6-ugd" firstAttribute="centerX" secondItem="0jb-ez-rXr" secondAttribute="centerX" type="default" id="mlO-Dn-fos"/>
                             <constraint firstItem="2Zk-YE-QJy" firstAttribute="top" secondItem="bSy-g6-ugd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="u1r-6r-wyJ"/>
-                            <constraint firstItem="bSy-g6-ugd" firstAttribute="top" secondItem="Chw-OX-lmO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="w4o-jc-S49"/>
                             <constraint firstItem="2Zk-YE-QJy" firstAttribute="centerX" secondItem="bSy-g6-ugd" secondAttribute="centerX" type="default" id="xTI-kV-szv"/>
                             <constraint firstItem="ZBG-f7-iwl" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xaw-CR-I6t"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Matchismo" image="PlayingCardGameIcon.png" id="9Aa-Wl-9vK"/>
                     <connections>
+                        <outlet property="cardCollectionView" destination="Chw-OX-lmO" id="aGx-XP-47S"/>
                         <outlet property="flipsLabel" destination="ZBG-f7-iwl" id="SK5-1U-tQL"/>
                         <outlet property="lastFlipResultLabel" destination="bSy-g6-ugd" id="39g-wm-bju"/>
                         <outlet property="scoreLabel" destination="Xss-2y-enz" id="bgu-so-GxB"/>
@@ -281,6 +284,7 @@
             <relationships>
                 <relationship kind="action" name="dealButtonClicked:"/>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cardCollectionView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
@@ -307,6 +311,9 @@
         </class>
         <class className="SettingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearScoreButtonClicked:" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
@@ -316,6 +323,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
