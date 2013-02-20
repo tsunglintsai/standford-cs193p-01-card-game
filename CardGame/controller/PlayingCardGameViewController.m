@@ -27,7 +27,7 @@
     return [[PlayingCardDeck alloc]init];
 }
 
-- (NSUInteger)initialCardNumber{
+- (NSUInteger)startingCardCount{
     return 22;
 }
 

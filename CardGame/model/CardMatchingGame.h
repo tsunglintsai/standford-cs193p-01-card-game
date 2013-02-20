@@ -47,9 +47,7 @@
  * @param matchNumber number of card need to be matched in order to get points.
  * @return CardMatchingGame object
  **/
--(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber;
-
-
+-(id)initWitCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber;
 
 ///---------------------------------------------------------------------------------------
 /// @name Game Playing Actions
@@ -72,4 +70,32 @@
  * Reset game status including score and card staus.
  **/
 -(void)resetGame;
+
+/**
+ * Draw more cards from deck
+ * @param number of card to draw
+ * @return false when there is not more card left in the deck, otherwise return true
+ **/
+-(BOOL)drawMoreCardWithCardCount:(NSUInteger)cardCount;
+
+/**
+ * Get count of cards that is playable
+ * @return playable card counts
+ **/
+-(NSUInteger) playableCardCount;
+
+/**
+ * Remove card from card list that can be play
+ * @param the card to be removed
+ **/
+-(void) removeCards:(Card *)card;
+
+/**
+ * Return index of current card
+ * @param the card to evluated
+ * @return index of the card. return -1 if no card found
+ **/
+-(NSUInteger) indexOfCard:(Card *)card;
+
+
 @end

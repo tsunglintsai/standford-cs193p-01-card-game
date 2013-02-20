@@ -30,7 +30,7 @@
     return _cards;
 }
 
--(id)initWithWithCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber{
+-(id)initWitCardCount:(NSUInteger)count usingDeck:(Deck*) deck withMatchCardNumber:(NSUInteger)matchNumber{
 
     self = [super init];
     self.numberOfMatchedCardRequired = matchNumber;
@@ -119,6 +119,30 @@
         card.faceup = false;
         card.unplayable = false;
     }
+}
+
+-(BOOL)drawMoreCardWithCardCount:(NSUInteger)cardCount{
+    for(int i = 0 ; i < cardCount ;i++){
+        Card *card = [self.deck drawRandomCard];
+        if(card){
+            [self.cards addObject:[self.deck drawRandomCard]];
+        }else{
+            return false;
+        }
+    }
+    return true;
+}
+
+-(NSUInteger) playableCardCount{
+    return [self.cards count];
+}
+
+-(void) removeCards:(Card *)card{
+    [self.cards removeObject:card];
+}
+
+-(NSUInteger) indexOfCard:(Card *)card{
+    return [self.cards indexOfObject:card];
 }
 
 

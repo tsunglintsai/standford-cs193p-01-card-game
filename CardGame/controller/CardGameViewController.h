@@ -14,7 +14,7 @@
  */
 #define Disable_Alpha 0.4
 
-@interface CardGameViewController : UIViewController
+@interface CardGameViewController : UIViewController<UICollectionViewDataSource>
 ///---------------------------------------------------------------------------------------
 /// @name CardGameViewController Attributes
 ///---------------------------------------------------------------------------------------
@@ -92,9 +92,17 @@
 - (Deck*)getCardDeck;
 
 /**
- * get card number which used for initilaized the game
- * @return card number
+ * get card count which used for initilaized the game
+ * @return card count
  **/
-- (NSUInteger)initialCardNumber;
+- (NSUInteger)startingCardCount;
+
+/**
+ * update card content in ui collection view
+ * @param cell cell for update
+ * @param card card to read data from
+ **/
+- (void) updateCell:(UICollectionViewCell*) cell useringCard:(Card*)card;
+
 
 @end

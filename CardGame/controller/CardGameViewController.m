@@ -11,6 +11,7 @@
 #import "PlayingCardDeck.h"
 #import "QuartzCore/QuartzCore.h"
 #import "GameResult.h"
+#import "CardHeaderView.h"
 
 @interface CardGameViewController()
 @property (strong, nonatomic) GameResult *gameResult;
@@ -29,7 +30,7 @@
 
 -(CardMatchingGame*) game{
     if(!_game){
-        _game = [[CardMatchingGame alloc]initWithWithCardCount:[self initialCardNumber] usingDeck:[self getCardDeck] withMatchCardNumber:self.numberOfMatchedCardInGame];
+        _game = [[CardMatchingGame alloc] initWitCardCount:[self startingCardCount] usingDeck:[self getCardDeck]  withMatchCardNumber:[self numberOfMatchedCardInGame]];
     }
     return _game;
 }
@@ -66,8 +67,59 @@
     return nil;
 }
 
-- (NSUInteger)initialCardNumber{
+- (NSUInteger)startingCardCount{
     return 0;
+}
+
+#pragma mark - ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+#pragma mark - ┃ collection view datasource {  ┃
+#pragma mark - ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 2;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if(section==0){
+        return [self startingCardCount];
+    }else{
+        return [self startingCardCount];
+        return 0;
+    }
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    //NSLog(@"cellForItemAtIndexPath indexPath:%@",indexPath);
+    UICollectionViewCell *cell;
+    if(indexPath.section==0){
+
+        cell = [self.cardCollectionView dequeueReusableCellWithReuseIdentifier:@"CardCell" forIndexPath:indexPath];
+        [self updateCell:cell useringCard:[self.game cardAtIndex:indexPath.item]];
+
+    }else{
+        cell = [self.cardCollectionView dequeueReusableCellWithReuseIdentifier:@"CardCell" forIndexPath:indexPath];
+        [self updateCell:cell useringCard:[self.game cardAtIndex:indexPath.item]];
+        
+    }
+    
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    CardHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CardHeaderView" forIndexPath:indexPath];
+    //NSString *searchTerm = self.searches[indexPath.section];
+    //[headerView setSearchText:searchTerm];
+    return headerView;
+}
+
+#pragma mark - ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+#pragma mark - ┃ collection view datasource }  ┃
+#pragma mark - ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+
+
+- (void) updateCell:(UICollectionViewCell*) cell useringCard:(Card*)card{
+    // abstract
 }
 
 

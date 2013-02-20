@@ -9,9 +9,10 @@
 #import "SetGameViewController.h"
 #import "SetGameDeck.h"
 #import "SetGameCard.h"
+#import "SetGameCardViewCell.h"
+#import "SetCardView.h"
 
 @interface SetGameViewController ()
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) SetGameDeck *setGameDeck;
 @property (nonatomic) CGFloat cardContentFontSize;
 @end
@@ -30,7 +31,19 @@
     return @"Set Game";
 }
 
-- (NSUInteger)initialCardNumber{
+- (NSUInteger)startingCardCount{
     return 12;
 }
+
+- (void) updateCell:(UICollectionViewCell*) cell useringCard:(Card*)card{
+    if([cell isKindOfClass:[SetGameCardViewCell class]]  && [card isKindOfClass:[SetGameCard class]] ){
+        SetGameCardViewCell *setGameCardViewCell = (SetGameCardViewCell*) cell;
+        SetGameCard *setGameCard = (SetGameCard*) card;
+        setGameCardViewCell.number = setGameCard.number;
+        setGameCardViewCell.symbol = setGameCard.symbol;
+        setGameCardViewCell.shading= setGameCard.shading;
+        setGameCardViewCell.color  = setGameCard.color;
+    }
+}
+
 @end
