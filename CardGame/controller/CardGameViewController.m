@@ -106,7 +106,6 @@
     }
     [self.flipResultView removeAllCardViews];        
     for( Card *card in [self.game cardsInlastOperation]){
-        //NSLog(@"put %@ in result view",card);
         [self.flipResultView addCardView:[self createCardViewUsingCard:card]];
     }
     
@@ -172,10 +171,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if(section == PLAYABLE_CARD_SECTION){ // playing cards
-        NSLog(@"numberOfItemsInSection 1:%i",[self.game playableCardCount]);
         return [self.game playableCardCount];
     }else if(section == PLAYDONE_CARD_SECTION){ // cards that done play
-        //NSLog(@"numberOfItemsInSection 2:%i",[self.cardsDonePlay count]);
         return [self.cardsDonePlay count];
     }else{
         return 0;
@@ -183,14 +180,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    //NSLog(@"cellForItemAtIndexPath indexPath:%@",indexPath);
     UICollectionViewCell *cell;
     if(indexPath.section == PLAYABLE_CARD_SECTION){
         cell = [self.cardCollectionView dequeueReusableCellWithReuseIdentifier:@"CardCell" forIndexPath:indexPath];
         [self updateCell:cell useringCard:[self.game cardAtIndex:indexPath.item]];
 
     }else if(indexPath.section == PLAYDONE_CARD_SECTION){
-        NSLog(@"%@",indexPath);
         cell = [self.cardCollectionView dequeueReusableCellWithReuseIdentifier:@"CardSetCell" forIndexPath:indexPath];
         //[self updateCell:cell useringCardSet:[self.cardsDonePlay objectAtIndex:indexPath.item]];
     }
@@ -213,7 +208,6 @@
 #pragma mark - ┃ gesture recoginzer         {  ┃
 #pragma mark - ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
 - (IBAction)cardCellClicked:(UITapGestureRecognizer *)gesture {
-    NSLog(@"userCellClicked");
     CGPoint tapLocation = [gesture locationInView:self.cardCollectionView];
     NSIndexPath *indexPath = [self.cardCollectionView indexPathForItemAtPoint:tapLocation];
     if(indexPath){
