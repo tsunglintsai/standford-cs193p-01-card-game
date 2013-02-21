@@ -65,11 +65,11 @@
         [self.cardCollectionView reloadData];
     }else if( [self.game pointsEarnInLastOperation] < 0 ){ // found no match
         self.flipResultView.prefixString = @"";
-        self.flipResultView.sufixString = @"don’t match! 2 point penalty!";
+        self.flipResultView.sufixString = [NSString stringWithFormat: @"don’t match! %i point penalty!",abs([self.game pointsEarnInLastOperation])];
         [self.cardCollectionView reloadData];
     }else if( [self.game pointsEarnInLastOperation] > 0 ){ // found a match
         self.flipResultView.prefixString = @"Matched";
-        self.flipResultView.sufixString = @"for 4 points";
+        self.flipResultView.sufixString = [NSString stringWithFormat:@"for %i points",[self.game pointsEarnInLastOperation]];
         
         NSArray *cardsToBeRemoved = [self.game cardsInlastOperation];
         NSMutableArray *cardIndexesToBeDeleted = [[NSMutableArray alloc]init];

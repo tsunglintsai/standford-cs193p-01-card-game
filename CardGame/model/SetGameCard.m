@@ -50,14 +50,10 @@
                 sumOfNumber += setGameCard.number;
                 sumOfShading += setGameCard.shading;
                 sumOfColor += setGameCard.color;
-                NSLog(@"process card:%@",setGameCard);
-                NSLog(@"sums:%@",[@[@(sumOfSymbol),@(sumOfNumber),@(sumOfShading),@(sumOfColor)] componentsJoinedByString:@","]);
-                
             }else{ // if any object in array is not set game card,then return 0
                 return 0;
             }
         }
-        NSLog(@"sums:%@",[@[@(sumOfSymbol),@(sumOfSymbol),@(sumOfShading),@(sumOfColor)] componentsJoinedByString:@","]);
         score = (sumOfSymbol % 3 == 0 && sumOfNumber % 3 == 0 && sumOfShading % 3 == 0 && sumOfColor % 3 == 0) ? 10 :0;
     }
     return score;
