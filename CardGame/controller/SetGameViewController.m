@@ -43,14 +43,7 @@
         setGameCardViewCell.symbol = setGameCard.symbol;
         setGameCardViewCell.shading= setGameCard.shading;
         setGameCardViewCell.color  = setGameCard.color;
-        
-        if(card.faceup){
-            setGameCardViewCell.drawOutLine = YES;
-        }else{
-            setGameCardViewCell.drawOutLine = NO;
-            
-        }
-        
+        setGameCardViewCell.drawOutLine = card.faceup;
     }
 }
 

@@ -72,6 +72,8 @@
 		BAB07EC816C8AEBE002BCD2D /* SetGameCardBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB07EC616C8AEBE002BCD2D /* SetGameCardBackground@2x.png */; };
 		BAB07ECD16C8B3C8002BCD2D /* SetGameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB07ECB16C8B3C8002BCD2D /* SetGameBackground.png */; };
 		BAB07ECE16C8B3C8002BCD2D /* SetGameBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB07ECC16C8B3C8002BCD2D /* SetGameBackground@2x.png */; };
+		BABA586C16D6069C0067FF8D /* SetCardDealImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BABA586A16D6069C0067FF8D /* SetCardDealImage.png */; };
+		BABA586D16D6069C0067FF8D /* SetCardDealImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BABA586B16D6069C0067FF8D /* SetCardDealImage@2x.png */; };
 		BAFB80A816C0253400E50F3E /* diamond-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFB804016C0253400E50F3E /* diamond-1@2x.png */; };
 		BAFB80A916C0253400E50F3E /* diamond-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFB804116C0253400E50F3E /* diamond-2.png */; };
 		BAFB80AA16C0253400E50F3E /* diamond-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFB804216C0253400E50F3E /* diamond-2@2x.png */; };
@@ -281,6 +283,8 @@
 		BAB07EC616C8AEBE002BCD2D /* SetGameCardBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SetGameCardBackground@2x.png"; sourceTree = "<group>"; };
 		BAB07ECB16C8B3C8002BCD2D /* SetGameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetGameBackground.png; sourceTree = "<group>"; };
 		BAB07ECC16C8B3C8002BCD2D /* SetGameBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SetGameBackground@2x.png"; sourceTree = "<group>"; };
+		BABA586A16D6069C0067FF8D /* SetCardDealImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetCardDealImage.png; sourceTree = "<group>"; };
+		BABA586B16D6069C0067FF8D /* SetCardDealImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SetCardDealImage@2x.png"; sourceTree = "<group>"; };
 		BAFB804016C0253400E50F3E /* diamond-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diamond-1@2x.png"; sourceTree = "<group>"; };
 		BAFB804116C0253400E50F3E /* diamond-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diamond-2.png"; sourceTree = "<group>"; };
 		BAFB804216C0253400E50F3E /* diamond-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diamond-2@2x.png"; sourceTree = "<group>"; };
@@ -430,6 +434,8 @@
 		33588B1716BB6FDF00E85276 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BABA586A16D6069C0067FF8D /* SetCardDealImage.png */,
+				BABA586B16D6069C0067FF8D /* SetCardDealImage@2x.png */,
 				331D452716C9500900681268 /* icon */,
 				BAB07ECB16C8B3C8002BCD2D /* SetGameBackground.png */,
 				BAB07ECC16C8B3C8002BCD2D /* SetGameBackground@2x.png */,
@@ -936,6 +942,8 @@
 				3369042516D46743009265A4 /* diamond in Resources */,
 				3369042616D46743009265A4 /* pill in Resources */,
 				3369042716D46743009265A4 /* wave in Resources */,
+				BABA586C16D6069C0067FF8D /* SetCardDealImage.png in Resources */,
+				BABA586D16D6069C0067FF8D /* SetCardDealImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
