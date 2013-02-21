@@ -248,6 +248,8 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="SlP-7y-VyZ"/>
                         <segue destination="Arm-pn-NGf" kind="relationship" relationship="viewControllers" id="eem-Gb-bpZ"/>
+                        <segue destination="4FH-sZ-d8c" kind="relationship" relationship="viewControllers" id="6Wh-od-aIX"/>
+                        <segue destination="Scd-fF-z09" kind="relationship" relationship="viewControllers" id="5qG-Ae-EFU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-JW-f4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,10 +261,10 @@
             <objects>
                 <viewController id="Scd-fF-z09" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Msh-hQ-T5Q">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" image="table background.png" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-ip-uuy"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="table background.png" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-ip-uuy"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6l-pr-uze">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="131" id="W0o-To-F5P"/>
@@ -286,7 +288,7 @@
                             <constraint firstItem="l6l-pr-uze" firstAttribute="top" secondItem="Msh-hQ-T5Q" secondAttribute="top" constant="284" id="C4U-Tl-yJU"/>
                             <constraint firstItem="pa7-ip-uuy" firstAttribute="leading" secondItem="Msh-hQ-T5Q" secondAttribute="leading" type="default" id="Dc8-bh-KwU"/>
                             <constraint firstItem="pa7-ip-uuy" firstAttribute="bottom" secondItem="Msh-hQ-T5Q" secondAttribute="bottom" type="default" id="J9G-dc-KIQ"/>
-                            <constraint firstItem="pa7-ip-uuy" firstAttribute="centerX" secondItem="l6l-pr-uze" secondAttribute="centerX" type="default" id="QQa-hj-D7c"/>
+                            <constraint firstAttribute="centerX" secondItem="l6l-pr-uze" secondAttribute="centerX" type="user" id="Zmq-3e-2Fw"/>
                             <constraint firstItem="pa7-ip-uuy" firstAttribute="top" secondItem="Msh-hQ-T5Q" secondAttribute="top" type="default" id="aoP-jV-hEw"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -303,15 +305,15 @@
             <objects>
                 <viewController id="4FH-sZ-d8c" customClass="GameScoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mgm-zz-kV7">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" image="table background.png" translatesAutoresizingMaskIntoConstraints="NO" id="uip-lo-0L8"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="table background.png" translatesAutoresizingMaskIntoConstraints="NO" id="uip-lo-0L8"/>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="score:" translatesAutoresizingMaskIntoConstraints="NO" id="60o-1n-L7r">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="659" id="m5N-bF-o7m"/>
-                                    <constraint firstAttribute="width" constant="951" id="r16-FL-WJu"/>
+                                    <constraint firstAttribute="height" constant="659" type="user" id="m5N-bF-o7m"/>
+                                    <constraint firstAttribute="width" constant="951" type="user" id="r16-FL-WJu"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -320,10 +322,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="60o-1n-L7r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mgm-zz-kV7" secondAttribute="leading" constant="44" type="user" id="4cw-L8-ala"/>
+                            <constraint firstItem="60o-1n-L7r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mgm-zz-kV7" secondAttribute="top" constant="20" type="user" id="Pkh-TZ-L9Q"/>
+                            <constraint firstAttribute="trailing" secondItem="60o-1n-L7r" secondAttribute="trailing" constant="29" type="user" id="W7r-Qt-qaW"/>
                             <constraint firstItem="uip-lo-0L8" firstAttribute="top" secondItem="mgm-zz-kV7" secondAttribute="top" type="default" id="XIk-Eb-col"/>
                             <constraint firstItem="uip-lo-0L8" firstAttribute="bottom" secondItem="mgm-zz-kV7" secondAttribute="bottom" type="default" id="cQe-Jn-Sn1"/>
-                            <constraint firstItem="60o-1n-L7r" firstAttribute="top" secondItem="mgm-zz-kV7" secondAttribute="top" constant="20" symbolic="YES" type="default" id="cub-XR-2a2"/>
-                            <constraint firstItem="60o-1n-L7r" firstAttribute="leading" secondItem="mgm-zz-kV7" secondAttribute="leading" constant="44" id="pKo-uf-eLL"/>
+                            <constraint firstItem="60o-1n-L7r" firstAttribute="top" secondItem="mgm-zz-kV7" secondAttribute="top" constant="20" symbolic="YES" type="user" id="cub-XR-2a2"/>
+                            <constraint firstAttribute="bottom" secondItem="60o-1n-L7r" secondAttribute="bottom" constant="20" type="user" id="dpT-bJ-QSi"/>
+                            <constraint firstItem="60o-1n-L7r" firstAttribute="leading" secondItem="mgm-zz-kV7" secondAttribute="leading" constant="44" type="user" id="pKo-uf-eLL"/>
                             <constraint firstItem="uip-lo-0L8" firstAttribute="leading" secondItem="mgm-zz-kV7" secondAttribute="leading" type="default" id="uWr-5I-0bf"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
