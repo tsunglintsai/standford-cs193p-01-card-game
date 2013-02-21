@@ -44,6 +44,7 @@
                 break;
             }
         }
+        self.deck = deck;
     }
     
     return self;
@@ -60,46 +61,47 @@
     Card *card = [self.cards objectAtIndex:index];
 
     if(card && !card.unplayable){
+        [self.cardsInlastOperation removeAllObjects];
         if(!card.isFaceup){
-            [self.cardsInlastOperation removeAllObjects];
-            [self.cardsInlastOperation addObject:card];
-            
             int pointsGetThisRound = FLIP_PENALTY;
-            
             NSMutableArray *otherCardsToMatch = [[NSMutableArray alloc]init];
-            
             for(Card *otherCard in self.cards){
                 if(otherCard.isFaceup && !otherCard.isUnplayable){
                     [otherCardsToMatch addObject:otherCard];
-
                     if([otherCardsToMatch count] == self.numberOfMatchedCardRequired -1){ // only try to match when reach number of cards required
-                    
                         int matchScore = [card match:otherCardsToMatch];
                         if(matchScore){
                             card.unplayable = YES;
                             for(Card *otherCardMatched in otherCardsToMatch){
                                 otherCardMatched.unplayable = YES;
+                                [self.cardsInlastOperation addObject:otherCardMatched];
                             }
                             pointsGetThisRound = matchScore * MATCH_BOUNUS;
                         }else{
                             for(Card *otherCardMatched in otherCardsToMatch){
                                 otherCardMatched.faceup = NO;
+                                [self.cardsInlastOperation addObject:otherCardMatched];                                
                             }
                             pointsGetThisRound = 0 - MISMATCH_PENALTY;
                         }
-                        for(Card *otherCardMatched in otherCardsToMatch){
-                            [self.cardsInlastOperation addObject:otherCardMatched];
-                        }
+                        [self.cardsInlastOperation addObject:card];
                         break;
                     }
-                    
                 }
             }
             
             self.score += pointsGetThisRound;
             self.pointsEarnInLastOperation = pointsGetThisRound;
         }
+
         card.faceup = !card.faceup;
+        if(self.pointsEarnInLastOperation == FLIP_PENALTY || self.pointsEarnInLastOperation==0){ // if not to reach com
+            for(Card *cardInCards in self.cards){
+                if(cardInCards.isFaceup){
+                    [self.cardsInlastOperation addObject:cardInCards];
+                }
+            }
+        }
     }
 }
 
@@ -121,29 +123,38 @@
     }
 }
 
--(BOOL)drawMoreCardWithCardCount:(NSUInteger)cardCount{
+-(NSArray*)drawMoreCardWithCardCount:(NSUInteger)cardCount{
+    NSMutableArray *result = [[NSMutableArray alloc]init];
     for(int i = 0 ; i < cardCount ;i++){
         Card *card = [self.deck drawRandomCard];
         if(card){
-            [self.cards addObject:[self.deck drawRandomCard]];
-        }else{
-            return false;
+            [self.cards addObject:card];
+            [result addObject:card];
         }
     }
-    return true;
+    return result;
 }
 
 -(NSUInteger) playableCardCount{
     return [self.cards count];
 }
 
--(void) removeCards:(Card *)card{
+-(void) removeCard:(Card *)card{
     [self.cards removeObject:card];
 }
 
--(NSUInteger) indexOfCard:(Card *)card{
+-(NSInteger) indexOfCard:(Card *)card{
     return [self.cards indexOfObject:card];
 }
 
+-(NSArray*) cardFlipped{
+    NSMutableArray *result = [[NSMutableArray alloc]init];
+    for(Card *card in self.cards){
+        if(card.faceup && !card.isUnplayable){
+            [result addObject:card];
+        }
+    }
+    return [result copy];
+}
 
 @end

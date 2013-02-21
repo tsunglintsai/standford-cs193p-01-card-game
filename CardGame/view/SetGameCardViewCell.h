@@ -13,4 +13,5 @@
 @property (nonatomic) NSUInteger symbol;
 @property (nonatomic) NSUInteger shading;
 @property (nonatomic) NSUInteger color;
+@property (nonatomic) BOOL drawOutLine;
 @end

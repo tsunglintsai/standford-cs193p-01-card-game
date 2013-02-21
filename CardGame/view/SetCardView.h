@@ -14,5 +14,5 @@
 @property (nonatomic) int shape;
 @property (nonatomic) int color;
 @property (nonatomic) int fill;
-
+@property (nonatomic) BOOL drawSelected;
 @end

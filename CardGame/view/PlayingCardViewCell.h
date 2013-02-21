@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayingCardViewCell : UICollectionViewCell
-
+@property (nonatomic) NSString *suit;
+@property (nonatomic) NSUInteger rank;
+@property (nonatomic) BOOL faceup;
 @end

@@ -43,7 +43,33 @@
         setGameCardViewCell.symbol = setGameCard.symbol;
         setGameCardViewCell.shading= setGameCard.shading;
         setGameCardViewCell.color  = setGameCard.color;
+        
+        if(card.faceup){
+            setGameCardViewCell.drawOutLine = YES;
+        }else{
+            setGameCardViewCell.drawOutLine = NO;
+            
+        }
+        
     }
+}
+
+- (void) updateCell:(UICollectionViewCell*) cell useringCardSet:(NSArray*)cardSet{
+
+}
+
+- (UIView*) createCardViewUsingCard:(Card*) card{
+    SetCardView *result;
+    if([card isKindOfClass:[SetGameCard class]]){
+        SetGameCard *setGameCard = (SetGameCard*)card;
+        result = [[SetCardView alloc]init];
+        result.number = setGameCard.number+1;
+        result.shape = setGameCard.symbol+1;
+        result.fill = setGameCard.shading+1;
+        result.color = setGameCard.color+1;
+        
+    }
+    return result;
 }
 
 @end

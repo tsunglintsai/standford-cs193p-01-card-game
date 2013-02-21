@@ -97,8 +97,16 @@
         }
     }
     
+    
+    
     CGContextRestoreGState(UIGraphicsGetCurrentContext());
-
+    
+    if(self.drawSelected){
+        [[UIColor colorWithRed:0.0
+                         green:0.0 blue:0.0 alpha:0.2]setFill];
+        roundedRect = [UIBezierPath bezierPathWithRect:self.bounds];
+        [roundedRect fill];
+    }
 }
 
 
@@ -119,6 +127,11 @@
 
 - (void)setFill:(int)fill {
     _fill = fill;
+    [self setNeedsDisplay];
+}
+
+-(void)setDrawSelected:(BOOL)drawSelected{
+    _drawSelected = drawSelected;
     [self setNeedsDisplay];
 }
 

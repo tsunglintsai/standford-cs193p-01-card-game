@@ -35,6 +35,12 @@
     self.setCardView.color = color+1;
 }
 
+-(void)setDrawOutLine:(BOOL)drawOutLine{
+    _drawOutLine = drawOutLine;
+    self.setCardView.drawSelected = drawOutLine;
+}
+
+
 #pragma mark - Initialization
 
 -(void)setup{

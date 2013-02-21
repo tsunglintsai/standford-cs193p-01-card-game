@@ -74,9 +74,9 @@
 /**
  * Draw more cards from deck
  * @param number of card to draw
- * @return false when there is not more card left in the deck, otherwise return true
+ * @return array of new cards drawed
  **/
--(BOOL)drawMoreCardWithCardCount:(NSUInteger)cardCount;
+-(NSArray*)drawMoreCardWithCardCount:(NSUInteger)cardCount;
 
 /**
  * Get count of cards that is playable
@@ -88,14 +88,18 @@
  * Remove card from card list that can be play
  * @param the card to be removed
  **/
--(void) removeCards:(Card *)card;
+-(void) removeCard:(Card *)card;
 
 /**
  * Return index of current card
  * @param the card to evluated
  * @return index of the card. return -1 if no card found
  **/
--(NSUInteger) indexOfCard:(Card *)card;
+-(NSInteger) indexOfCard:(Card *)card;
 
-
+/**
+ * Return list of cards that currently flipped up
+ * @return list of card objects.
+ **/
+-(NSArray*) cardFlipped;
 @end
